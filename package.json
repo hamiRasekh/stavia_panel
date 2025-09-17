@@ -1,0 +1,14 @@
+{
+  "name": "stavia_panel",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}
