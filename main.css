@@ -1103,3 +1103,115 @@ html, body {
     animation: none !important;
   }
 }
+
+/* Product Verify Modal Styles */
+.product-verify-card {
+  width: 100%;
+  background: #ECF0FF;
+  box-shadow: 0px 0px 10px #0091D0;
+  border-radius: 10px;
+  border: 2px #0560FD solid;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.product-verify-content {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  direction: rtl;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  min-height: 30px;
+}
+
+.product-label {
+  color: #0560FD;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.product-value {
+  color: #333;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.product-code {
+  color: #0560FD !important;
+  font-weight: 600;
+}
+
+.product-price {
+  color: #0560FD !important;
+  font-weight: 600;
+}
+
+.product-image-container {
+  flex-shrink: 0;
+  width: 80px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Modal customizations */
+.modal-subtext {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.btn-brand {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-brand:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}

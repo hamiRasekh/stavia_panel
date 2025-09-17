@@ -21,7 +21,6 @@
     /* ========== LAYOUT STYLES ========== */
     .layout-container {
       display: flex;
-      height: 100vh;
       overflow: hidden;
     }
     
@@ -758,9 +757,6 @@
     
     /* Toolbar Styles */
     .results-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       margin-bottom: 20px;
       padding: 16px 0;
     }
@@ -1529,9 +1525,15 @@
     <div class="sidebar" id="sidebar">
       <!-- Sidebar Topbar -->
       <div class="sidebar-topbar">
-        <div class="topbar-left">
-          <h6 class="topbar-user-name">نام فروشنده</h6>
+        <div class="d-flex align-items-center gap-2" >
+          <div class="topbar-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="topbar-user-name">
+            <h6 class="topbar-user-name">نام فروشنده</h6>
+          </div>
         </div>
+        
         
         <div class="topbar-spacer"></div>
         
@@ -1543,9 +1545,6 @@
             <i class="bi bi-bell"></i>
             <span class="topbar-badge">24</span>
           </button>
-          <div class="topbar-avatar">
-            <i class="bi bi-person-fill"></i>
-          </div>
         </div>
       </div>
       
@@ -1642,11 +1641,7 @@
     
     <!-- Main Content Area -->
     <div class="main-content d-flex justify-content-center align-items-center" style="min-height: 100vh; background: var(--bg-base);" id="mainContent">
-      <!-- Page Header -->
-      <div class="page-header mb-4" style="display: none;">
-        <h2 class="page-title">جستجو و ثبت کالا</h2>
-        <p class="page-description">در این بخش می‌توانید کالاهای جدید را جستجو و ثبت کنید.</p>
-      </div>
+    
       
       <!-- Search Card Section -->
       <div class="search-card-surface" style="width: 820px; padding: 40px;">
@@ -1734,201 +1729,283 @@
             <!-- Actions -->
             <div class="search-card-actions d-flex justify-content-end align-items-center">
               <a href="#" class="search-card-link">بازگشت</a>
-              <button class="btn btn-brand search-card-action-btn" id="viewProductListBtn">
+              <button class="btn btn-brand search-card-action-btn" onclick="hidden1()">
                 مشاهده لیست کالاها
               </button>
             </div>
           </div>
         
         <!-- Results List Section -->
-        <div class="results-list-container" style="max-width: 1360px; margin-top: 28px; display: none;">
-          <!-- Toolbar -->
-          <div class="results-toolbar" style="display: none; margin-bottom: 20px;">
-            <!-- Top Row: Search and Filter Button -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <div class="d-flex align-items-center gap-3">
+        <div class="" id="card1" style="margin: auto; width: 100%; padding: 20px; display: none;">
+          <div class="results-list-container" style="max-width: 1360px; margin: 0 auto;">
+           
+            
+            <!-- Results Table Container with Scrolling -->
+            <div class="table-container" style="background: #F6F7FB; border-radius: 20px; padding: 24px;  overflow-x: auto;">
+               <!-- Toolbar -->
+            <div class="results-toolbar mb-4">
+              <div style="width: 100%; margin: auto; margin-bottom: 20px;"  > 
                 <div class="search-container position-relative">
-                  <input type="text" class="form-control" placeholder="نمونه" style="width: 200px; background: #F6F7FB; border: 1px solid #E5E7EB; border-radius: 8px;">
+                  <input type="text" class="form-control" placeholder="نمونه" style="width: 100%; background: #ECF0FF; border: 2px solid #ECF0FF; border-radius: 10px; padding-right: 40px;">
                   <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
                 </div>
-                <button class="btn btn-outline-secondary d-flex align-items-center gap-2" style="background: #F6F7FB; border: 1px solid #E5E7EB; border-radius: 8px;">
-                  <i class="bi bi-funnel"></i>
-                  فیلترها (1)
+              </div>
+              <!-- Top Row: Search and Filter Button -->
+              
+              <!-- Bottom Row: Results Count and Filter Chips -->
+              <div class="d-flex justify-content-between mb-3 align-items-center">
+                <div class="d-flex align-items-center gap-3">
+
+                  <div class="d-flex gap-2">
+                    <div class="d-flex  align-items-center gap-2">
+                      <i class="bi bi-sliders2 fw-bold text-primary" style="font-weight: 800;" ></i>
+                      <span style="color: #606060; font-size: 15px; margin-left: 60px; font-weight: 500; word-wrap: break-word" >فیلتر ها</span>
+                    </div>
+
+                    <select class="" style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid" >
+                      <option value="1">فیلتر اول</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select class="" style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid" >
+                      <option value="1">فیلتر دوم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select class="" style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid" >
+                      <option value="1">فیلتر سوم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select class="" style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid" >
+                      <option value="1">فیلتر چهارم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between" >
+                <button class="btn btn-primary d-flex align-items-center gap-2" style="background: #0560FD; border: none; border-radius: 8px; box-shadow: 0 0 10px #0091D0;">
+                  <i class="bi bi-plus-lg"></i> ثبت کالای جدید
                 </button>
-              </div>
-              <button class="btn btn-primary d-flex align-items-center gap-2" style="background: #0560FD; border: none; border-radius: 8px; box-shadow: 0 0 10px #0091D0;">
-                <i class="bi bi-plus-lg"></i> ثبت کالای جدید
-              </button>
-            </div>
-            
-            <!-- Bottom Row: Results Count and Filter Chips -->
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-3">
-                <span class="text-muted">تعداد نتایج : ۱۲۵۶</span>
-                <div class="d-flex gap-2">
-                  <button class="btn btn-primary btn-sm rounded-pill" style="background: #0560FD; border: none;">فیلتر اول <i class="bi bi-chevron-down"></i></button>
-                  <button class="btn btn-primary btn-sm rounded-pill" style="background: #0560FD; border: none;">فیلتر دوم <i class="bi bi-chevron-down"></i></button>
-                  <button class="btn btn-primary btn-sm rounded-pill" style="background: #0560FD; border: none;">فیلتر سوم <i class="bi bi-chevron-down"></i></button>
-                  <button class="btn btn-primary btn-sm rounded-pill" style="background: #0560FD; border: none;">فیلتر چهارم <i class="bi bi-chevron-down"></i></button>
-                </div>
+                <span class="text-primary fw-medium">تعداد نتایج : ۱۲۵۶</span>
               </div>
             </div>
-          </div>
-          
-          <!-- Results List Card -->
-          <div class="results-list-card" style="width: 1360px; background: #F6F7FB; border-radius: 20px; padding: 24px;">
-            <!-- Results List -->
-            <div class="results-list">
-            <!-- Table Header -->
-            <div class="results-header" style="display: none;">
-              <div class="header-cell title-col">عنوان کالا</div>
-              <div class="header-cell status-col">وضعیت</div>
-              <div class="header-cell commission-col">کمیسیون</div>
-              <div class="header-cell ref-price-col">قیمت مرجع (ریال)</div>
-              <div class="header-cell min-city-price-col">کمترین قیمت در استاویتا (ریال)</div>
-              <div class="header-cell sellers-col">تعداد فروشندگان</div>
-            </div>
-            
-            <!-- Table Rows -->
-            <div class="results-rows" style="max-height: 980px; overflow-y: auto;">
-              <!-- Row 1 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ...</div>
-                      <div class="product-code">STA-4586</div>
-                    </div>
-                  </div>
+              <!-- Table Header -->
+              <div class="table-header" style="background: #ECF0FF;  border-radius: 8px; padding: 16px 24px; margin-bottom: 12px; margin-bottom: 10px;">
+                <div class="row g-0">
+                  <div class="col-4 text-end fw-normal"   style="font-size: 13px;" >عنوان کالا</div>
+                  <div class="col-1 text-center fw-normal" style="font-size: 13px;" >وضعیت</div>
+                  <div class="col-1 text-center fw-normal" style="font-size: 13px;" >کمسیون</div>
+                  <div class="col-2 text-center fw-normal" style="font-size: 13px;" >قیمت مرجع (ریال)</div>
+                  <div class="col-2 text-center fw-normal" style="font-size: 13px;" >کمترین قیمت در استاویتا (ریال)</div>
+                  <div class="col-2 text-center fw-normal" style="font-size: 13px;" >تعداد فروشندگان</div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-available">قابل فروش</span>
-                </div>
-                <div class="result-cell commission-col">۹%</div>
-                <div class="result-cell ref-price-col">۱۵,۳۵۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۱۴,۲۵۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۳</div>
               </div>
               
-              <!-- Row 2 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</div>
-                      <div class="product-code">STA-4587</div>
+              <!-- Table Rows -->
+              <div class="table-rows">
+                <!-- Row 1 -->
+                <div class="table-row mb-3" onclick="showVerifyModal()" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۹%</div>
+                    <div class="col-2 text-center">۱۵,۷۵۰,۰۰۰</div>
+                    <div class="col-2 text-center">۱۴,۲۵۰,۰۰۰</div>
+                    <div class="col-2 text-center">۳</div>
                   </div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-available">قابل فروش</span>
-                </div>
-                <div class="result-cell commission-col">۸%</div>
-                <div class="result-cell ref-price-col">۹,۲۰۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۸,۷۵۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۵</div>
-              </div>
-              
-              <!-- Row 3 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
-                      <div class="product-code">STA-4588</div>
+                
+                <!-- Row 2 -->
+                <div class="table-row mb-3" onclick="showVerifyModal()" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4587</div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۸%</div>
+                    <div class="col-2 text-center">۹,۲۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۸,۷۵۰,۰۰۰</div>
+                    <div class="col-2 text-center">۵</div>
                   </div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-unavailable">غیرقابل فروش</span>
-                </div>
-                <div class="result-cell commission-col">۷%</div>
-                <div class="result-cell ref-price-col">۲۴,۰۰۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۲۲,۵۰۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۲</div>
-              </div>
-              
-              <!-- Row 4 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</div>
-                      <div class="product-code">STA-4589</div>
+                
+                <!-- Row 3 -->
+                <div class="table-row mb-3" onclick="showVerifyModal()" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4588</div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #FFEBEE; color: #C62828; padding: 4px 8px; border-radius: 4px;">غیرقابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۷%</div>
+                    <div class="col-2 text-center">۲۴,۰۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۲۲,۵۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۲</div>
                   </div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-available">قابل فروش</span>
-                </div>
-                <div class="result-cell commission-col">۶%</div>
-                <div class="result-cell ref-price-col">۷,۲۰۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۶,۸۰۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۷</div>
-              </div>
-              
-              <!-- Row 5 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</div>
-                      <div class="product-code">STA-4590</div>
+                
+                <!-- Row 4 -->
+                <div class="table-row mb-3"  onclick="showVerifyModal()"style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4589</div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۶%</div>
+                    <div class="col-2 text-center">۷,۲۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۶,۸۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۷</div>
                   </div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-pending">در انتظار تایید</span>
-                </div>
-                <div class="result-cell commission-col">۵%</div>
-                <div class="result-cell ref-price-col">۲۰,۰۰۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۱۸,۹۰۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۱</div>
-              </div>
-              
-              <!-- Row 6 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</div>
-                      <div class="product-code">STA-4591</div>
+                
+                <!-- Row 5 -->
+                <div class="table-row mb-3"  onclick="showVerifyModal()"style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4590</div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #FFF3E0; color: #F57C00; padding: 4px 8px; border-radius: 4px;">در انتظار تایید</span>
+                    </div>
+                    <div class="col-1 text-center">۵%</div>
+                    <div class="col-2 text-center">۲۰,۰۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۱۸,۹۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۱</div>
                   </div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-available">قابل فروش</span>
-                </div>
-                <div class="result-cell commission-col">۴%</div>
-                <div class="result-cell ref-price-col">۱۳,۰۰۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۱۲,۳۰۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۴</div>
-              </div>
-              
-              <!-- Row 7 -->
-              <div class="result-row" style="display: none;">
-                <div class="result-cell title-col">
-                  <div class="d-flex align-items-center gap-3">
-                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</div>
-                      <div class="product-code">STA-4592</div>
+                
+                <!-- Row 6 -->
+                <div class="table-row mb-3"  onclick="showVerifyModal()"  style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4591</div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۴%</div>
+                    <div class="col-2 text-center">۱۳,۰۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۱۲,۳۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۴</div>
                   </div>
                 </div>
-                <div class="result-cell status-col">
-                  <span class="status-badge status-available">قابل فروش</span>
+                
+                <!-- Row 7 -->
+                <div class="table-row mb-3"  onclick="showVerifyModal()"  style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4592</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۳%</div>
+                    <div class="col-2 text-center">۱۰,۵۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۹,۸۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۶</div>
+                  </div>
                 </div>
-                <div class="result-cell commission-col">۳%</div>
-                <div class="result-cell ref-price-col">۱۰,۵۰۰,۰۰۰</div>
-                <div class="result-cell min-city-price-col">۹,۸۰۰,۰۰۰</div>
-                <div class="result-cell sellers-col">۶</div>
+                
+                <!-- Additional rows for scrolling demonstration -->
+                <div class="table-row mb-3"  onclick="showVerifyModal()"  style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4593</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۲%</div>
+                    <div class="col-2 text-center">۸,۵۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۷,۹۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۸</div>
+                  </div>
+                </div>
+                
+                <div class="table-row mb-3"  onclick="showVerifyModal()"  style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-4 text-end">
+                      <div class="d-flex align-items-center gap-3">
+                        <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                        <div class="text-start">
+                          <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                          <div class="product-code text-muted" style="font-size: 12px;">STA-4594</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 text-center">
+                      <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">قابل فروش</span>
+                    </div>
+                    <div class="col-1 text-center">۱%</div>
+                    <div class="col-2 text-center">۶,۲۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۵,۸۰۰,۰۰۰</div>
+                    <div class="col-2 text-center">۹</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1938,8 +2015,8 @@
   </div>
 
   <!-- Modal: Verify Same Product -->
-  <div class="modal fade" id="modal-verify-same-product" tabindex="-1" aria-labelledby="modal-verify-same-product-label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+  <div class="modal fade"  id="modal-verify-same-product" tabindex="-1" aria-labelledby="modal-verify-same-product-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
@@ -1951,32 +2028,36 @@
         <div class="modal-body">
           <p class="modal-subtext">اگر مشخصات این کالا با کالای شما منطبق است، می‌توانید این کالا را بفروشید</p>
           
-          <!-- Product Information Surface -->
-          <div class="product-info-surface">
-            <div class="product-info-grid">
-              <!-- Row 1: Title and Image -->
-              <div class="product-info-item">
-                <div class="product-info-label">عنوان کالا</div>
-                <div class="product-info-value product-title-value">نمونه محصول</div>
-              </div>
-              <div class="product-info-item product-image-item">
-                <img src="/img/placeholder-product.png" alt="Product" class="product-info-image" width="48" height="88">
+          <!-- Product Information Card -->
+          <div class="product-verify-card">
+            <div class="product-verify-content">
+              <!-- Product Details -->
+              <div class="product-details">
+                <div class="product-detail-row">
+                  <span class="product-label">عنوان کالا</span>
+                  <span class="product-value">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</span>
+                </div>
+                <div class="product-detail-row">
+                  <span class="product-label">کد کالا (STA)</span>
+                  <span class="product-value product-code">۱۲۳۴۵</span>
+                </div>
+                <div class="product-detail-row">
+                  <span class="product-label">قیمت مرجع (ریال)</span>
+                  <span class="product-value product-price">۱۵,۲۴۶,۰۰۰</span>
+                </div>
+                <div class="product-detail-row">
+                  <span class="product-label">کمیسیون</span>
+                  <span class="product-value">۹%</span>
+                </div>
+                <div class="product-detail-row">
+                  <span class="product-label">برند</span>
+                  <span class="product-value">نمونه</span>
+                </div>
               </div>
               
-              <!-- Row 2: Code and Reference Price -->
-              <div class="product-info-item">
-                <div class="product-info-label">کد کالا (STA)</div>
-                <div class="product-info-value">STA-12345</div>
-              </div>
-              <div class="product-info-item">
-                <div class="product-info-label">قیمت مرجع (ریال)</div>
-                <div class="product-info-value">۱۵,۲۴۶,۰۰۰</div>
-              </div>
-              
-              <!-- Row 3: Commission -->
-              <div class="product-info-item">
-                <div class="product-info-label">کمیسیون</div>
-                <div class="product-info-value">۹%</div>
+              <!-- Product Image -->
+              <div class="product-image-container">
+                <img src="img/placeholder-product.png" alt="Product" class="product-image">
               </div>
             </div>
           </div>
@@ -2037,8 +2118,15 @@
         <!-- Modal Body -->
         <div class="modal-body">
           <p class="modal-subtext">برای فروش کالا، تنوع آن را ثبت کنید.</p>
-          
+          <div style="width: 100%; height: 100%; background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">
+            <div class="d-flex flex-column align-items-center justify-content-between ">
+               <div class="d-flex align-items-center ">
+                <img src="/img/placeholder-product.png" alt="Product" class="product-confirmation-image">
+               </div>
+            </div>
+          </div>
           <!-- Product Info Surface -->
+
           <div class="product-confirmation-surface">
             <p class="product-confirmation-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ...</p>
             <div class="product-confirmation-details">
@@ -2178,7 +2266,15 @@
       if (window.innerWidth > 768) {
         sidebar.classList.remove('mobile-open');
       }
+    
     });
+
+
+    function hidden1() {
+      document.querySelector('.results-list-container').style.display = 'block';
+      document.querySelector('#card1').style.display = 'block';
+      document.querySelector('.search-card-surface').style.display = 'none';
+    }
     
     // ========== SEARCH CARD FUNCTIONALITY ==========
     
@@ -2266,6 +2362,7 @@
     // Handle view product list button click
     viewProductListBtn.addEventListener('click', function() {
       // Hide search card
+
       searchCard.style.display = 'none';
       
       // Show results container
@@ -2691,6 +2788,21 @@
       console.log('- Became seller modal primary → Add variant modal');
       console.log('- Not found button → Add variant modal');
     });
+
+
+
+
+    function showVerifyModal() {    
+    const el = document.getElementById('modal-verify-same-product');
+    const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el); // سازگار
+    modal.show();
+  }
+
+  function hideVerifyModal() {
+    const el = document.getElementById('modal-verify-same-product');
+    const modal = bootstrap.Modal.getInstance(el);
+    if (modal) modal.hide();
+  }
     
     // Example: Show modal when clicking on a result row (for demonstration)
     // You can call showVerifyModal() from other parts of your application
