@@ -1098,8 +1098,8 @@
     }
     
     .modal-header {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 24px;
+      border : none !important;
+      padding: 12px 24px;
     }
     
     .modal-title {
@@ -1194,11 +1194,8 @@
     }
     
     .modal-footer {
-      border-top: 1px solid var(--border);
+      border-top: none !important;
       padding: 20px 24px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
     }
     
     .modal-sell-btn {
@@ -2019,176 +2016,263 @@
 
   <!-- Modal: Verify Same Product -->
   <div class="modal fade "  id="modal-verify-same-product" tabindex="-1" aria-labelledby="modal-verify-same-product-label" aria-hidden="true">
-    <div class="modal-dialog modal-lg  modal-dialog-centered" style="width: 67% ;">
+    <div class="modal-dialog modal-lg  modal-dialog-centered"  style="max-width: 65%" >
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="modal-verify-same-product-label">همین کالا را می‌فروشید ؟</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+          <div class="justify-content-between d-flex flex-row justify-content-between w-100 " style="border-bottom: 2px solid #606060;" >
+            <h5 class="modal-title" style="font-size:16px ; font-weight: bold" id="modal-verify-same-product-label">همین کالا را می‌فروشید ؟</h5>
+            <div data-bs-dismiss="modal" ><i class="bi bi-x fs-3"></i></div>
+          </div>
         </div>
-        
+
         <!-- Modal Body -->
         <div class="modal-body">
-          <p class="modal-subtext">اگر مشخصات این کالا با کالای شما منطبق است، می‌توانید این کالا را بفروشید</p>
-          <div style="width: 100%; height: 100%; background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">
-            <div class="d-flex flex-column align-items-center justify-content-between  " style="padding: 25px 30px">
-              <div class="row g-3">
-                <div class="col-12 col-xl-2 align-content-center">
+          <p class="modal-subtext" >اگر مشخصات این کالا با کالای شما منطبق است، می‌توانید این کالا را بفروشید</p>
+          <div class="mb-3"
+               style="width: 100%; background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">
+            <div class="p-3">
+              <div class="row g-2 align-items-center">
+
+                <!-- تصویر محصول -->
+                <div class="col-12 col-xl-2 d-flex justify-content-center">
                   <div class="d-flex justify-content-center align-items-center"
                        style="width: 120px; height: 120px; background:#fff; border:1px solid #F3F3F3; border-radius:12px;">
-                    <img
-                            src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png"
-                            alt="Product"
-                            style="max-width: 70%; max-height: 70%; object-fit: contain;" />
+                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png"
+                         alt="Product"
+                         style="max-width: 70%; max-height: 70%; object-fit: contain;" />
                   </div>
                 </div>
-                <div class="col-12 col-xl-3">
-                  <div class="text-start text-primary fw-bold " style="font-size: 15px" >
-                    <div class="mb-1" >عنوان کالا</div>
-                    <div class="mb-1" >کد کلا</div>
-                    <div class="mb-1" >قیمت مرجع (ریال)</div>
-                    <div class="mb-1" >کمیسیون</div>
-                    <div class="mb-1" >برند</div>
+
+                <!-- متن‌ها -->
+                <div class="col-12 col-xl-10 ">
+                  <div class="container">
+                    <div class="row g-2">
+                      <div class="col-4 col-xl-3 text-primary fw-bold">عنوان کالا</div>
+                      <div class="col-8 col-xl-9 text-secondary">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-4 col-xl-3 text-primary fw-bold">کد کالا</div>
+                      <div class="col-8 col-xl-9 text-secondary">۱۲۳۴۵</div>
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-4 col-xl-3 text-primary fw-bold">قیمت مرجع (ریال)</div>
+                      <div class="col-8 col-xl-9 text-secondary">۱۵٬۲۶۴٬۰۰۰</div>
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-4 col-xl-3 text-primary fw-bold">کمیسیون</div>
+                      <div class="col-8 col-xl-9 text-secondary">۹%</div>
+                    </div>
+                    <div class="row g-2">
+                      <div class="col-4 col-xl-3 text-primary fw-bold">برند</div>
+                      <div class="col-8 col-xl-9 text-secondary">نمونه</div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12 col-xl-7">
-                  <div class="text-start  fw-medium " style="font-size: 15px; color: #606060" >
-                    <div class="mb-1" >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
-                    <div class="mb-1" >۱۲۳۴۵</div>
-                    <div class="mb-1" >۱۵٬۲۶۴٬۰۰۰</div>
-                    <div class="mb-1" >۹%</div>
-                    <div class="mb-1" >نمونه</div>
-                  </div>
-                </div>
+
+              </div>
             </div>
           </div>
         </div>
-        
+
         <!-- Modal Footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">بازگشت</button>
-          <button type="button" class="btn btn-brand modal-sell-btn" id="btn-sell-this">فروش همین کالا</button>
+          <div style="
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          gap: 12px;
+          border-top: 2px solid #606060;
+          padding-top: 20px;
+              " >
+            <button type="button" style="font-size: 12px ; font-weight: 700 ;"  class="btn btn-outline-secondary" data-bs-dismiss="modal">بازگشت</button>
+            <button type="button" style="font-size: 12px ; font-weight: 700 ;" class="btn btn-brand modal-sell-btn" onclick="showModal2()" >فروش همین کالا</button>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 
   <!-- Modal: Became Seller -->
-  <div class="modal fade" id="modal-became-seller" tabindex="-1" aria-labelledby="modal-became-seller-label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+  <div class="modal fade "  id="modal-became-seller" tabindex="-1" aria-labelledby="modal-became-seller-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg  modal-dialog-centered"  style="max-width: 65%" >
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="modal-became-seller-label">فروشنده شدید !</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+          <div class="justify-content-between d-flex flex-row justify-content-between w-100 " style="border-bottom: 2px solid #606060;" >
+            <h5 class="modal-title" style="font-size:16px ; font-weight: bold" id="modal-became-seller-label">فروشنده شدید !</h5>
+            <div data-bs-dismiss="modal" ><i class="bi bi-x fs-3"></i></div>
+          </div>
         </div>
-        
+
         <!-- Modal Body -->
         <div class="modal-body">
-          <p class="modal-subtext">شما فروشنده این کالا با کد کالایی STA-12345 شدید، برای فروش کالا، تنوع آن را ثبت کنید.</p>
-          
-          <!-- Product Confirmation Surface -->
-          <div class="product-confirmation-surface">
-            <p class="product-confirmation-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم...</p>
-            <div class="product-confirmation-details">
-              <span class="product-confirmation-code">STA-12345</span>
-              <img src="/img/placeholder-product.png" alt="Product" class="product-confirmation-image">
+          <p class="modal-subtext text-primary "  >شما فروشنده این کالا با کد کالایی STA-12345 شدید! برای فروش کالا، تنوع آن را ثبت کنید.</p>
+          <div class="mb-3"
+               style="width: 100%; background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">
+            <div class="p-3">
+              <div class="row g-2 align-items-center">
+
+                <!-- تصویر محصول -->
+                <div class="col-12 col-xl-2 d-flex justify-content-center">
+                  <div class="d-flex justify-content-center align-items-center"
+                       style="width: 120px; height: 120px; background:#fff; border:1px solid #F3F3F3; border-radius:12px;">
+                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png"
+                         alt="Product"
+                         style="max-width: 70%; max-height: 70%; object-fit: contain;" />
+                  </div>
+                </div>
+
+                <!-- متن‌ها -->
+                <div class="col-12 col-xl-10 d-flex flex-column justify-content-center">
+                  <div class="text-secondary mb-2">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                  </div>
+                  <div class="text-secondary">STA-12345</div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-        
+
         <!-- Modal Footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">بازگشت</button>
-          <button type="button" class="btn btn-brand modal-register-variant-btn">ثبت تنوع کالا</button>
+          <div style="
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          gap: 12px;
+          border-top: 2px solid #606060;
+          padding-top: 20px;
+              " >
+            <button type="button" style="font-size: 12px ; font-weight: 700 ;"  class="btn btn-outline-secondary" data-bs-dismiss="modal">بازگشت</button>
+            <button type="button" style="font-size: 12px ; font-weight: 700 ;" class="btn btn-brand modal-sell-btn" onclick="showModal3()"  >ثبت تنوع کالا</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Modal: Add Variant -->
-  <div class="modal fade" id="modal-add-variant" tabindex="-1" aria-labelledby="modal-add-variant-label" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+  <div class="modal fade "  id="modal-add-variant" tabindex="-1" aria-labelledby="modal-add-variant-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg  modal-dialog-centered"  style="max-width: 65%" >
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="modal-add-variant-label">افزودن تنوع کالا</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+          <div class="justify-content-between d-flex flex-row justify-content-between w-100 " style="border-bottom: 2px solid #606060;" >
+            <h5 class="modal-title" style="font-size:16px ; font-weight: bold" id="modal-add-variant-label">فروشنده شدید !</h5>
+            <div data-bs-dismiss="modal" ><i class="bi bi-x fs-3"></i></div>
+          </div>
         </div>
-        
+
         <!-- Modal Body -->
         <div class="modal-body">
-          <p class="modal-subtext">برای فروش کالا، تنوع آن را ثبت کنید.</p>
-          <!-- Product Info Surface -->
+          <p class="modal-subtext text-primary "  >شما فروشنده این کالا با کد کالایی STA-12345 شدید! برای فروش کالا، تنوع آن را ثبت کنید.</p>
+          <div class="mb-3"
+               style="width: 100%; background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">
+            <div class="p-3">
+              <div class="row g-2 align-items-center">
 
-          <div class="product-confirmation-surface">
-            <p class="product-confirmation-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ...</p>
-            <div class="product-confirmation-details">
-              <span class="product-confirmation-code">STA-12345</span>
-              <img src="/img/placeholder-product.png" alt="Product" class="product-confirmation-image">
+                <!-- تصویر محصول -->
+                <div class="col-12 col-xl-2 d-flex justify-content-center">
+                  <div class="d-flex justify-content-center align-items-center"
+                       style="width: 120px; height: 120px; background:#fff; border:1px solid #F3F3F3; border-radius:12px;">
+                    <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png"
+                         alt="Product"
+                         style="max-width: 70%; max-height: 70%; object-fit: contain;" />
+                  </div>
+                </div>
+
+                <!-- متن‌ها -->
+                <div class="col-12 col-xl-10 d-flex flex-column justify-content-center">
+                  <div class="text-secondary mb-2">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                  </div>
+                  <div class="text-secondary">STA-12345</div>
+                </div>
+
+              </div>
             </div>
           </div>
-          
-          <!-- Divider -->
-          <div class="modal-divider"></div>
-          
-          <!-- Variant Form -->
-          <form class="variant-form" id="variantForm">
-            <div class="variant-form-grid">
-              <!-- Brand Selection -->
-              <div class="form-group">
-                <label for="brandSelect" class="form-label required">انتخاب برند *</label>
-                <select class="form-select" id="brandSelect" required>
-                  <option value="" disabled selected>انتخاب</option>
-                  <option value="sample1">نمونه ۱</option>
-                  <option value="sample2">نمونه ۲</option>
-                </select>
-              </div>
-              
-              <!-- Size/Volume Selection -->
-              <div class="form-group">
-                <label for="sizeSelect" class="form-label required">انتخاب سایز یا حجم *</label>
-                <select class="form-select" id="sizeSelect" required>
-                  <option value="" disabled selected>انتخاب</option>
-                  <option value="30ml">۳۰ml</option>
-                  <option value="50ml">۵۰ml</option>
-                  <option value="100ml">۱۰۰ml</option>
-                </select>
-              </div>
-              
-              <!-- Delivery Time -->
-              <div class="form-group">
-                <label for="deliveryTime" class="form-label required">بازه زمان ارسال (روز) *</label>
-                <input type="number" class="form-control" id="deliveryTime" placeholder="۲" required>
-              </div>
-              
-              <!-- Max Order Per Cart -->
-              <div class="form-group">
-                <label for="maxOrder" class="form-label">حداکثر سفارش در سبد (عدد)</label>
-                <input type="number" class="form-control" id="maxOrder" placeholder="۱۰">
-              </div>
-              
-              <!-- Stock Quantity -->
-              <div class="form-group">
-                <label for="stockQuantity" class="form-label">موجودی نزد شما (عدد)</label>
-                <input type="number" class="form-control" id="stockQuantity" placeholder="۲۰">
-              </div>
-              
-              <!-- Sale Price -->
-              <div class="form-group">
-                <label for="salePrice" class="form-label required">قیمت فروش (ریال) *</label>
-                <input type="text" class="form-control" id="salePrice" placeholder="۱۵,۳۵۰,۰۰۰" required>
-              </div>
+          <div style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 12px;
+          border-top: 2px solid #606060;
+          padding-top: 25px;
+              "  >
+            <div>
+              <label class="form-label required mb-2 " style="font-size: 12px ; font-weight: bold" >
+                انتخاب رنگ:
+              </label>
+              <select class="bg-white border-dark border-2 " style="border-radius: 10px ; width: 8rem; height: 35px  " >
+                <option> </option>
+                <option>2</option>
+              </select>
             </div>
-          </form>
+            <div>
+              <label class="form-label required mb-2 " style="font-size: 12px ; font-weight: bold" >
+                انتخاب سایز یا حجم:
+              </label>
+              <select class="bg-white border-dark border-2 " style="border-radius: 10px ; width: 8rem; height: 35px  " >
+                <option> </option>
+                <option>2</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label required mb-2 " style="font-size: 12px ; font-weight: bold" >
+                بازه زمانی ارسال (روز):
+              </label>
+              <select class="bg-white border-dark border-2 " style="border-radius: 10px ; width: 8rem; height: 35px  " >
+                <option> </option>
+                <option>2</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label required mb-2 " style="font-size: 12px ; font-weight: bold" >
+                حداکثر سفارش در سبد (عدد):
+              </label>
+              <select class="bg-white border-dark border-2 " style="border-radius: 10px ; width: 8rem; height: 35px;   " >
+                <option> </option>
+                <option>2</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label required mb-2 " style="font-size: 12px ; font-weight: bold" >
+                موجودی نزد شما (عدد):
+              </label>
+              <select class="bg-white border-dark border-2 " style="border-radius: 10px ; width: 8rem; height: 35px   " >
+                <option> </option>
+                <option>2</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label required mb-2 " style="font-size: 12px ; font-weight: bold" >
+                قیمت فروش (ریال):
+              </label>
+              <select class="bg-white border-dark border-2 " style="border-radius: 10px ; width: 8rem; height: 35px   " >
+                <option> </option>
+                <option>2</option>
+              </select>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Modal Footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" id="addNewVariantBtn">
-            <i class="bi bi-plus-lg me-1"></i>
-            افزودن تنوع جدید
-          </button>
-          <button type="button" class="btn btn-brand modal-add-to-list-btn">افزودن به لیست تنوع</button>
+          <div style="
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          gap: 12px;
+          border-top: 2px solid #606060;
+          padding-top: 20px;
+              " >
+            <button type="button" style="font-size: 12px ; font-weight: 700 ;"  class="btn btn-outline-secondary" data-bs-dismiss="modal">بازگشت</button>
+            <button type="button" style="font-size: 12px ; font-weight: 700 ;" class="btn btn-brand modal-sell-btn"  >ثبت تنوع کالا</button>
+          </div>
         </div>
       </div>
     </div>
@@ -2795,6 +2879,28 @@
     const el = document.getElementById('modal-verify-same-product');
     const modal = bootstrap.Modal.getInstance(el);
     if (modal) modal.hide();
+  }
+  function showModal2() {
+      hideVerifyModal()
+      const el = document.getElementById('modal-became-seller');
+      const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el); // سازگار
+      modal.show();
+  }
+  function hideModal2() {
+    const el = document.getElementById('modal-became-seller');
+    const modal = bootstrap.Modal.getInstance(el);
+    if (modal) modal.hide();
+  }
+  function showModal3() {
+    hideModal2();
+    const el = document.getElementById('modal-add-variant');
+    const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el); // سازگار
+    modal.show();
+  }
+  function hideModal3() {
+      const el = document.getElementById('modal-add-variant');
+      const modal = bootstrap.Modal.getInstance(el);
+      if (modal) modal.hide();
   }
     
     // Example: Show modal when clicking on a result row (for demonstration)
