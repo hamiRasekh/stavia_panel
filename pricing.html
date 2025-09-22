@@ -154,99 +154,120 @@
       <!-- Results List Section -->
       <div id="card1" style=" width: 100%; padding: 20px;">
         <div class="results-list-container" style="max-width: 1360px; margin: 0 auto;">
-          <div class="pricing-table">
-            <div class="mb-3 d-flex justify-content-between align-items-center">
-              <div class="search-container position-relative" style="flex:1; max-width: 520px;">
-                <input type="text" class="form-control" placeholder="جستجو" style="width: 100%; background: #ECF0FF; border: 2px solid #ECF0FF; border-radius: 10px; padding-right: 40px;">
-                <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+          <!-- Results Table Container with Scrolling -->
+          <div class="table-container" style="background: #F6F7FB; border-radius: 20px; padding: 24px;  overflow-x: auto;">
+            <!-- Toolbar -->
+            <div class="results-toolbar mb-4">
+              <div style="width: 100%; margin: auto; margin-bottom: 20px;">
+                <div class="search-container position-relative">
+                  <input type="text" class="form-control" placeholder="نمونه" style="width: 100%; background: #ECF0FF; border: 2px solid #ECF0FF; border-radius: 10px; padding-right: 40px;">
+                  <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                </div>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <span class="text-primary fw-medium">تعداد نتایج : ۱۲۵۶</span>
-                <button class="btn pricing-small-btn pricing-add-btn d-flex align-items-center gap-2">
+              <div class="d-flex justify-content-between mb-3 align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="d-flex  align-items-center gap-2">
+                    <i class="bi bi-sliders2 fw-bold text-primary" style="font-weight: 800;"></i>
+                    <span style="color: #606060; font-size: 15px; margin-left: 60px; font-weight: 500; word-wrap: break-word">فیلتر ها</span>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر اول</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر دوم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر سوم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر چهارم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-primary d-flex align-items-center gap-2" style="background: #0560FD; border: none; border-radius: 8px; box-shadow: 0 0 10px #0091D0;">
                   <i class="bi bi-plus-lg"></i> ثبت کالای جدید
                 </button>
+                <span class="text-primary fw-medium">تعداد نتایج : ۱۲۵۶</span>
               </div>
             </div>
 
-            <!-- Row 1 (matches screenshot style) -->
-            <div class="pricing-row">
-              <div class="pricing-row-header">
-                <div class="pricing-product">
-                  <img class="pricing-thumb" src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="" />
-                  <div>
-                    <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
-                    <div class="product-code">STA-4586</div>
+            <!-- Table Header -->
+            <div class="table-header" style="background: #ECF0FF;  border-radius: 8px; padding: 16px 24px; margin-bottom: 10px;">
+              <div class="row g-0">
+                <div class="col-3 text-start fw-normal" style="font-size: 13px;">عنوان کالا</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">گروه کالایی</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">برند کالا</div>
+                <div class="col-1 text-center fw-normal" style="font-size: 13px;">وضعیت</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">تعداد تنوع</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">قابلیت</div>
+              </div>
+            </div>
+
+            <!-- Table Rows -->
+            <div class="table-rows">
+              <!-- Row 1 -->
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">برند</div>
+                  <div class="col-1 text-center">
+                    <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
+                  </div>
+                  <div class="col-2 text-center">2</div>
+                  <div class="col-2 text-center">
+                    <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
                   </div>
                 </div>
-                <div class="text-center">دسته بندی</div>
-                <div class="text-center">برند</div>
-                <div class="text-center"><span class="pricing-badge">تایید شده</span></div>
-                <div class="text-center">
-                  <button class="btn pricing-small-btn pricing-edit-btn" onclick="showModal3()">افزودن تنوع</button>
-                </div>
               </div>
 
-              <div class="pricing-divider"></div>
-
-              <div class="pricing-line mb-2">
-                <button class="btn pricing-small-btn pricing-edit-btn">ویرایش</button>
-                <input class="pricing-input" value="۲,۶۵۰,۰۰۰" />
-                <select class="pricing-select"><option>۲۰</option></select>
-                <select class="pricing-select"><option>۲</option></select>
-                <select class="pricing-select"><option>۵</option></select>
-                <div class="d-flex align-items-center justify-content-center gap-2">
-                  <span>حداکثر سفارش در سبد (عدد)</span>
-                </div>
-              </div>
-
-              <div class="pricing-line">
-                <button class="btn pricing-small-btn pricing-edit-btn">افزایش</button>
-                <input class="pricing-input" />
-                <select class="pricing-select"><option>۲۰</option></select>
-                <select class="pricing-select"><option>۲</option></select>
-                <select class="pricing-select"><option>۵</option></select>
-                <div class="d-flex align-items-center justify-content-center gap-2">
-                  <span>سایر با عجم</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 2 (duplicate for sample) -->
-            <div class="pricing-row">
-              <div class="pricing-row-header">
-                <div class="pricing-product">
-                  <img class="pricing-thumb" src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="" />
-                  <div>
-                    <div class="product-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</div>
-                    <div class="product-code">STA-4587</div>
+              <!-- Row 2 -->
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4587</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">برند</div>
+                  <div class="col-1 text-center">
+                    <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
+                  </div>
+                  <div class="col-2 text-center">2</div>
+                  <div class="col-2 text-center">
+                    <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
                   </div>
                 </div>
-                <div class="text-center">دسته بندی</div>
-                <div class="text-center">برند</div>
-                <div class="text-center"><span class="pricing-badge">تایید شده</span></div>
-                <div class="text-center">
-                  <button class="btn pricing-small-btn pricing-edit-btn" onclick="showModal3()">افزودن تنوع</button>
-                </div>
-              </div>
-              <div class="pricing-divider"></div>
-              <div class="pricing-line mb-2">
-                <button class="btn pricing-small-btn pricing-edit-btn">ویرایش</button>
-                <input class="pricing-input" value="۲,۳۰۰,۰۰۰" />
-                <select class="pricing-select"><option>۲۰</option></select>
-                <select class="pricing-select"><option>۲</option></select>
-                <select class="pricing-select"><option>۵</option></select>
-                <div></div>
-              </div>
-              <div class="pricing-line">
-                <button class="btn pricing-small-btn pricing-edit-btn">افزایش</button>
-                <input class="pricing-input" />
-                <select class="pricing-select"><option>۲۰</option></select>
-                <select class="pricing-select"><option>۲</option></select>
-                <select class="pricing-select"><option>۵</option></select>
-                <div></div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
