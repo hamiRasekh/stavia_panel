@@ -666,6 +666,16 @@
       box-shadow: 0 0 10px #0091D0;
       transition: all 0.2s ease;
     }
+    .search-input2 {
+        width: 100%;
+        height: 45px;
+        padding: 12px 16px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: #ECF0FF;
+        font-size: 14px;
+        color: #0F1723;
+    }
     
     .search-input:focus {
       outline: none;
@@ -1511,6 +1521,80 @@
     [data-bs-theme="dark"] .form-control::placeholder {
       color: var(--text-muted);
     }
+
+    /* ===== Step 4 styles (exact per request) ===== */
+    .step4-input {
+      border-radius: 10px;
+      border: 2px solid #606060;
+      background: #fff;
+      color: #0F1723;
+    }
+    .step4-input:focus {
+      border-color: #0560FD;
+      box-shadow: 0 0 0 2px rgba(5, 96, 253, 0.1);
+    }
+    .step4-label {
+      font-weight: 500; /* Medium */
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #0F1723;
+    }
+    .step4-section-title {
+      font-weight: 800; /* ExtraBold */
+      font-size: 18px;
+      color: #0560FD;
+    }
+    .step4-group {
+      background: #F6F7FB; /* per request */
+      border-radius: 20px;
+    }
+    .step4-group-title {
+      font-weight: 800; /* ExtraBold */
+      font-size: 18px;
+      color: #0560FD;
+    }
+    .step4-group .form-control,
+    .step4-group .form-select,
+    .step4-group .input-group-text {
+      background: #ECF0FF; /* readable over dark group box */
+    }
+    /* Custom select (Step 4) */
+    .step4-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 16 16%22%3E%3Cpath fill=%220560FD%22 d=%22M3.204 5.5a.5.5 0 0 1 .638-.057l.07.057L8 9.086l4.088-3.586a.5.5 0 0 1 .765.638l-.057.07-4.5 3.95a.5.5 0 0 1-.638.057l-.07-.057-4.5-3.95a.5.5 0 0 1 0-.764z%22/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: left 12px center;
+      background-size: 20px 20px;
+      padding-left: 40px; /* space for chevron */
+      border-radius: 10px;
+      border: 2px solid #606060;
+      height: 45px;
+      line-height: 45px;
+    }
+    .step4-upload {
+      background: #ECF0FF;
+      border: 2px dashed #606060;
+      border-radius: 10px;
+    }
+
+    /* Success modal look */
+    .step4-success-modal {
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    /* Success modal responsive width */
+    #successRegisterModal .modal-dialog {
+      max-width: 925px;
+      width: calc(100% - 2rem);
+    }
+    /* Keep success icon aspect ratio */
+    .success-icon {
+      width: 90px;
+      height: auto;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body>
@@ -2018,84 +2102,118 @@
           <button type="button" class="btn-close" id="categoryCloseBtnSurface" aria-label="بستن"></button>
         </div>
 
-        <div class="mb-4">
-          <input type="text" class="form-control form-control-lg" id="categorySearchInput" placeholder="جستجوی دسته‌بندی..." autocomplete="off">
+        <div class="search-input-container mb-4 position-relative ">
+            <input type="text"  class="search-input2" placeholder="جستجوی کالا" style="padding-right: 50px;">
+            <i class="bi bi-search search-input-icon"></i>
         </div>
 
-        <div class="overflow-auto" style="max-height: 420px;">
-      <div id="categoryGrid" class="row row-cols-1 row-cols-md-2 g-3">
-        <div class="col">
-          <div class="" data-category-id="1">
+        <div class="overflow-y-auto" style="max-height: 420px;">
+            <div id="categoryGrid" class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="col" onclick="showStep2()"  >
+          <div class=" mb-2 mt-2 "  onclick="showStep2()" data-category-id="1">
             <div class="d-flex justify-content-between align-items-center "   >
               <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-primary chevron-glow"></i>
+              <i class="bi bi-chevron-left text-primary fw-bolder "></i>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="" data-category-id="1">
-            <div class="d-flex justify-content-between align-items-center  ">
+        <div class="col"  onclick="showStep2()" >
+              <div class=" mb-2 mt-2 "  onclick="showStep2()" data-category-id="1">
+                  <div class="d-flex justify-content-between align-items-center "   >
+                      <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                      <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                  </div>
+              </div>
+        </div>
+        <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+        <div class="col" onclick="showStep2()" >
+          <div class=" mb-2 mt-2 " data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center "   >
               <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-primary fw-bolder chevron-glow"></i>
+              <i class="bi bi-chevron-left text-primary fw-bolder "></i>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-category-id="3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
+        <div class="col" onclick="showStep2()" >
+              <div class=" mb-2 mt-2 "  data-category-id="1">
+                  <div class="d-flex justify-content-between align-items-center "   >
+                      <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                      <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                  </div>
+              </div>
+        </div>
+        <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+        <div class="col" onclick="showStep2()" >
+          <div class=" mb-2 mt-2 " data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center "   >
               <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
+              <i class="bi bi-chevron-left text-primary fw-bolder "></i>
             </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
           </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-category-id="4">
-            <div class="d-flex justify-content-between align-items-start mb-2">
+        <div class="col" onclick="showStep2()" >
+              <div class=" mb-2 mt-2 "  data-category-id="1">
+                  <div class="d-flex justify-content-between align-items-center "   >
+                      <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                      <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                  </div>
+              </div>
+        </div>
+        <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+        <div class="col" onclick="showStep2()" >
+          <div class=" mb-2 mt-2 " data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center "   >
               <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
+              <i class="bi bi-chevron-left text-primary fw-bolder "></i>
             </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
           </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-category-id="5">
-            <div class="d-flex justify-content-between align-items-start mb-2">
+        <div class="col" onclick="showStep2()" >
+              <div class=" mb-2 mt-2 "  data-category-id="1">
+                  <div class="d-flex justify-content-between align-items-center "   >
+                      <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                      <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                  </div>
+              </div>
+        </div>
+        <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+        <div class="col" onclick="showStep2()" >
+          <div class=" mb-2 mt-2 " data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center "   >
               <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
+              <i class="bi bi-chevron-left text-primary fw-bolder "></i>
             </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
           </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-category-id="6">
-            <div class="d-flex justify-content-between align-items-start mb-2">
+        <div class="col" onclick="showStep2()" >
+              <div class=" mb-2 mt-2 "  data-category-id="1">
+                  <div class="d-flex justify-content-between align-items-center "   >
+                      <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                      <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                  </div>
+              </div>
+        </div>
+        <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+        <div class="col" onclick="showStep2()" >
+          <div class=" mb-2 mt-2 " data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center "   >
               <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
+              <i class="bi bi-chevron-left text-primary fw-bolder "></i>
             </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
           </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-category-id="7">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
-            </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
-          </div>
+        <div class="col" onclick="showStep2()" >
+              <div class=" mb-2 mt-2 "  data-category-id="1">
+                  <div class="d-flex justify-content-between align-items-center "   >
+                      <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                      <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                  </div>
+              </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-category-id="8">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
-            </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
-          </div>
-        </div>
+        <div style="width: 100%; height: 1px; background-color:#606060" ></div>
       </div>
         </div>
+
       </div>
 
       <!-- Subcategory Picker Surface (Step 2) -->
@@ -2104,95 +2222,416 @@
           <h5 class="mb-0">انتخاب زیر-دسته</h5>
           <button type="button" class="btn-close" id="verifyCloseBtnSurface" aria-label="بستن"></button>
         </div>
-        <div class="text-muted small mb-3" id="breadcrumbStep2">—</div>
+          <div class="search-input-container mb-4 position-relative ">
+              <input type="text"  class="search-input2" placeholder="جستجوی کالا" style="padding-right: 50px;">
+              <i class="bi bi-search search-input-icon"></i>
+          </div>
+        <div class="text-muted small mb-3" id="breadcrumbStep2">دسته بندی نمونه /</div>
         <div class="overflow-auto" style="max-height: 420px;">
-      <div id="subcategoryGrid" class="row row-cols-1 row-cols-md-2 g-3">
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-1">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
-            </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          <div id="subcategoryGrid" class="row row-cols-1 row-cols-md-2 g-3">
+              <div class="col" onclick="showStep3()"  >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="col"  onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 "  data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 "  data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 "  data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 "  data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="col" onclick="showStep3()" >
+                  <div class=" mb-2 mt-2 "  data-category-id="1">
+                      <div class="d-flex justify-content-between align-items-center "   >
+                          <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+                          <i class="bi bi-chevron-left text-primary fw-bolder "></i>
+                      </div>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
           </div>
         </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-2">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
-            </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          <div class="d-flex justify-content-end mt-4">
+              <button type="button" class="btn btn-light text-primary border-black" onclick="showStep1()" > بازگشت به مرحله قبل</button>
           </div>
-        </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-3">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
-            </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-4">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
-              <i class="bi bi-chevron-left text-muted"></i>
-            </div>
-            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
-          </div>
-        </div>
-      </div>
-        </div>
       </div>
 
       <!-- Product Select Surface (Step 3) -->
       <div id="product-select-surface" class="search-card-surface d-none" style="width: 820px; padding: 40px; margin: 24px auto;">
         <div class="d-flex justify-content-between align-items-center mb-2">
           <h5 class="mb-0">انتخاب کالا</h5>
-          <button type="button" class="btn-close" id="productSelectCloseBtn" aria-label="بستن"></button>
         </div>
-        <div class="text-muted small mb-3" id="breadcrumbStep3">—</div>
-        <div class="row g-3 mb-3">
-          <div class="col-12">
-            <label for="productSelect" class="form-label">محصول</label>
-            <select id="productSelect" class="form-select">
-              <option value="">یک محصول را انتخاب کنید...</option>
-            </select>
+          <div class="search-input-container mb-4 position-relative ">
+              <input type="text"  class="search-input2" placeholder="جستجوی کالا" style="padding-right: 50px;">
+              <i class="bi bi-search search-input-icon"></i>
+          </div>
+        <div class="text-muted small mb-3" id="breadcrumbStep3">دسته بندی نمونه / دسته بندی نمونه </div>
+        <div class="overflow-auto" style="max-height: 420px;">
+          <div class="row row-cols-1 row-cols-md-2 g-3" id="productRadioList">
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p1">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p2">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p3">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p4">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p5">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+                <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p6">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p7">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div class="col"  >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p8">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+              <div class="col"  >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p9">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div class="col"   >
+                  <div class=" mb-2 mt-2 " data-category-id="1">
+                      <label class="d-flex align-items-center justify-content-start">
+                          <input class="form-check-input  ms-2" style="border-color: #606060; height: 20px ; width: 20px ; "  type="radio" name="productRadio" value="p10">
+                          <span style="font-size: 14px" >دسته بندی نمونه</span>
+                      </label>
+                  </div>
+              </div>
+              <div style="width: 100%; height: 1px; background-color:#606060" ></div>
+          </div>
+          </div>
+        <div class="d-flex justify-content-end mt-4">
+          <button type="button" class="btn btn-light text-primary border-black" id="productBackBtn">بازگشت به مرحله قبل</button>
+          <button type="button" class="btn btn-primary me-2 " id="productContinueBtn" onclick="showStep4()" >ادامه</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Register Product Surface -->
+      <div id="product-register-surface" class="d-none" style="width: 100%; padding: 24px; margin: 24px 0;">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">ثبت و تکمیل اطلاعات محصول</h5>
+          <button type="button" class="btn-close" id="productRegisterCloseBtn" aria-label="بستن"></button>
+        </div>
+
+        <!-- Section: عنوان محصول -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">عنوان محصول</div>
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="step4-label" for="pTitleFa">نام فارسی کالا</label>
+              <input id="pTitleFa" type="text" class="form-control step4-input" >
+            </div>
+            <div class="col-12">
+              <label class="step4-label" for="pTitleEn">نام انگلیسی کالا</label>
+              <input id="pTitleEn" type="text" class="form-control step4-input"  >
+            </div>
           </div>
         </div>
-        <div class="overflow-auto" style="max-height: 420px;">
-      <div class="list-group list-group-flush" id="productRadioList">
-        <label class="list-group-item d-flex align-items-center justify-content-between">
-          <span>دسته بندی نمونه</span>
-          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p1">
-        </label>
-        <label class="list-group-item d-flex align-items-center justify-content-between">
-          <span>دسته بندی نمونه</span>
-          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p2">
-        </label>
-        <label class="list-group-item d-flex align-items-center justify-content-between">
-          <span>دسته بندی نمونه</span>
-          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p3">
-        </label>
-        <label class="list-group-item d-flex align-items-center justify-content-between">
-          <span>دسته بندی نمونه</span>
-          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p4">
-        </label>
-        <label class="list-group-item d-flex align-items-center justify-content-between">
-          <span>دسته بندی نمونه</span>
-          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p5">
-        </label>
-        <label class="list-group-item d-flex align-items-center justify-content-between">
-          <span>دسته بندی نمونه</span>
-          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p6">
-        </label>
-      </div>
+
+        <!-- Section: برند محصول -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">برند محصول</div>
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="step4-label" for="pBrand">نام برند یا تولیدکننده</label>
+              <input id="pBrand" type="text" class="form-control step4-input"  >
+            </div>
+          </div>
         </div>
-        <div class="d-flex justify-content-between mt-4">
-          <button type="button" class="btn btn-light" id="productBackBtn">بازگشت</button>
-          <button type="button" class="btn btn-primary" id="productContinueBtn" disabled>ادامه</button>
+
+        <!-- Section: مشخصات پایه -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">مشخصات پایه</div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="step4-label" for="pModel">مدل کالا</label>
+              <input id="pModel" type="text" class="form-control step4-input"  >
+            </div>
+            <div class="col-md-6">
+              <label class="step4-label" for="pType">نوع کالا</label>
+              <select id="pType" class="form-select step4-input step4-select">
+                <option>—</option>
+                <option>نوع ۱</option>
+                <option>نوع ۲</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="step4-label" for="pSubCat">زیر دسته</label>
+              <select id="pSubCat" class="form-select step4-input step4-select">
+                <option>—</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="step4-label" for="pCat">دسته‌بندی</label>
+              <select id="pCat" class="form-select step4-input step4-select">
+                <option>—</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: بسته‌بندی -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">بسته‌بندی (مخصوص انبارداری)</div>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label class="step4-label" for="pLen">طول بسته‌بندی</label>
+              <div class="input-group">
+                <input id="pLen" type="text" class="form-control step4-input"  >
+                <span class="input-group-text">سانتی‌متر</span>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="step4-label" for="pWidth">عرض بسته‌بندی</label>
+              <div class="input-group">
+                <input id="pWidth" type="text" class="form-control step4-input"  >
+                <span class="input-group-text">سانتی‌متر</span>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="step4-label" for="pHeight">ارتفاع بسته‌بندی</label>
+              <div class="input-group">
+                <input id="pHeight" type="text" class="form-control step4-input"  >
+                <span class="input-group-text">سانتی‌متر</span>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="step4-label" for="pWeight">وزن بسته</label>
+              <div class="input-group">
+                <input id="pWeight" type="text" class="form-control step4-input"  >
+                <span class="input-group-text">کیلوگرم</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: اطلاعات محصول -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">اطلاعات محصول</div>
+          <div class="mb-3">
+            <label class="step4-label" for="pDesc">شرح کالا</label>
+            <textarea id="pDesc" rows="3" class="form-control step4-input"  ></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="step4-label" for="pPros">نقاط قوت</label>
+            <textarea id="pPros" rows="2" class="form-control step4-input"  ></textarea>
+          </div>
+          <div class="mb-0">
+            <label class="step4-label" for="pCons">نقاط ضعف</label>
+            <textarea id="pCons" rows="2" class="form-control step4-input"  ></textarea>
+          </div>
+        </div>
+
+        <!-- Section: مشخصات محصول -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">مشخصات محصول</div>
+          <div class="mb-3">
+            <label class="step4-label" for="pItems">اقلام همراه</label>
+            <textarea id="pItems" rows="2" class="form-control step4-input"  ></textarea>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="step4-label" for="spec1">مشخصه یک</label>
+              <select id="spec1" class="form-select step4-input step4-select">
+                <option>—</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="step4-label" for="spec2">مشخصه دو</label>
+              <select id="spec2" class="form-select step4-input step4-select">
+                <option>—</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="step4-label" for="spec3">مشخصه سه</label>
+              <select id="spec3" class="form-select step4-input step4-select">
+                <option>—</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: بارگذاری عکس محصول -->
+        <div class="step4-group mb-4 p-3">
+          <div class="step4-group-title mb-3">بارگذاری عکس محصول</div>
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="step4-label">بارگذاری عکس اصلی محصول</label>
+              <div class="step4-upload p-3">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="text-muted small">فرمت‌های مجاز: JPG, PNG • حداقل 1080×1080</div>
+                  <button type="button" class="btn btn-outline-primary btn-sm">آپلود</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="step4-label">بارگذاری عکس‌های گالری محصول</label>
+              <div class="step4-upload p-3">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="text-muted small">حداکثر 5 تصویر • حداقل 1080×1080</div>
+                  <button type="button" class="btn btn-outline-primary btn-sm">آپلود</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-3">
+          <button type="button" class="btn btn-light" onclick="showStep3()">بازگشت</button>
+          <button type="button" class="btn btn-primary" id="finalSubmitBtn">ثبت محصول</button>
+        </div>
+      </div>
+
+      <!-- Success Modal: Product Registered -->
+      <div class="modal fade" id="successRegisterModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content step4-success-modal">
+            <div class="modal-body d-flex flex-column align-items-center justify-content-center p-4 p-md-5">
+              <img src="img/Subtract.png" alt="success" class="mb-4 success-icon">
+              <h4 class="mb-3" style="color:#0560FD; font-weight:800; font-size: 30px;">محصول شما با موفقیت ثبت شد</h4>
+              <div class="text-muted" style="font-size: 16px;">محصول پس از تایید تیم پشتیبانی استاوینا در پنل شما قرار می‌گیرد</div>
+            </div>
+            <div class="modal-footer text-end p-4">
+              <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">بستن</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -3237,322 +3676,115 @@
 
   <!-- ========== StaviaSearch Namespace Script ========== -->
   <script>
-    // StaviaSearch: hooks #notFoundBtn to show category surface, manages surface flow and variant modal
-    window.StaviaSearch = (function() {
-      const state = {
-        selectedCategoryId: null,
-        categories: [
-          { id: 1, title: 'موبایل', path: ['کالای دیجیتال', 'موبایل'] },
-          { id: 2, title: 'لپ‌تاپ', path: ['کالای دیجیتال', 'لپ‌تاپ'] },
-          { id: 3, title: 'هدفون بی‌سیم', path: ['کالای دیجیتال', 'صوتی و تصویری'] },
-          { id: 4, title: 'کتانی مردانه', path: ['مد و پوشاک', 'کفش'] },
-          { id: 5, title: 'مایع ظرفشویی', path: ['سوپرمارکت', 'بهداشت منزل'] },
-          { id: 6, title: 'ساعت هوشمند', path: ['کالای دیجیتال', 'گجت'] },
-          { id: 7, title: 'کرم مرطوب‌کننده', path: ['آرایشی و بهداشتی', 'مراقبت پوست'] },
-          { id: 8, title: 'چای سبز', path: ['سوپرمارکت', 'نوشیدنی'] }
-        ],
-        productPreview: {
-          title: 'کالای نمونه',
-          code: 'STA-00001',
-          brand: 'برند نمونه',
-          category: '—',
-          image: 'https://via.placeholder.com/48x88.png?text=48x88'
-        },
-        variants: []
-      };
+    // Simple step navigation functions
+    function showStep1() {
+      document.querySelector(".search-card-surface").style.display = "none";
+      const categoryPickerSurface = document.getElementById('category-picker-surface');
+      const productVerifySurface = document.getElementById('product-verify-surface');
+      const productSelectSurface = document.getElementById('product-select-surface');
+      const productRegisterSurface = document.getElementById('product-register-surface');
+      
+      if (categoryPickerSurface) categoryPickerSurface.classList.remove('d-none');
+      if (productVerifySurface) productVerifySurface.classList.add('d-none');
+      if (productSelectSurface) productSelectSurface.classList.add('d-none');
+      if (productRegisterSurface) productRegisterSurface.classList.add('d-none');
+    }
 
-      // Helpers
-      const els = {};
-      function cacheEls() {
-        els.notFoundBtn = document.getElementById('notFoundBtn');
-        els.categoryPickerSurface = document.getElementById('category-picker-surface');
-        els.productVerifySurface = document.getElementById('product-verify-surface');
-        els.productSelectSurface = document.getElementById('product-select-surface');
-        els.modal3 = document.getElementById('modal-register-variant');
-        els.categorySearchInput = document.getElementById('categorySearchInput');
-        els.categoryGrid = document.getElementById('categoryGrid');
-        els.subcategoryGrid = document.getElementById('subcategoryGrid');
-        els.productSelect = document.getElementById('productSelect');
-        els.productRadioList = document.getElementById('productRadioList');
-        els.productContinueBtn = document.getElementById('productContinueBtn');
-        els.productBackBtn = document.getElementById('productBackBtn');
-        els.categoryCloseBtnSurface = document.getElementById('categoryCloseBtnSurface');
-        els.verifyCloseBtnSurface = document.getElementById('verifyCloseBtnSurface');
-        els.productSelectCloseBtn = document.getElementById('productSelectCloseBtn');
-        els.breadcrumbStep2 = document.getElementById('breadcrumbStep2');
-        els.breadcrumbStep3 = document.getElementById('breadcrumbStep3');
-        els.variantForm = document.getElementById('variantForm');
-        els.addVariantBtn = document.getElementById('addVariantBtn');
-        els.submitVariantsBtn = document.getElementById('submitVariantsBtn');
-        els.variantTableBody = document.getElementById('variantTableBody');
-        els.successToast = document.getElementById('successToast');
-        // preview fields
-        els.pvTitle = document.getElementById('pvTitle');
-        els.pvCode = document.getElementById('pvCode');
-        els.pvBrand = document.getElementById('pvBrand');
-        els.pvCategory = document.getElementById('pvCategory');
-        els.pvImage = document.getElementById('pvImage');
-      }
+    function showStep2() {
+      document.querySelector(".search-card-surface").style.display = "none";
+      const categoryPickerSurface = document.getElementById('category-picker-surface');
+      const productVerifySurface = document.getElementById('product-verify-surface');
+      const productSelectSurface = document.getElementById('product-select-surface');
+      const productRegisterSurface = document.getElementById('product-register-surface');
+      
+      if (categoryPickerSurface) categoryPickerSurface.classList.add('d-none');
+      if (productVerifySurface) productVerifySurface.classList.remove('d-none');
+      if (productSelectSurface) productSelectSurface.classList.add('d-none');
+      if (productRegisterSurface) productRegisterSurface.classList.add('d-none');
+    }
 
-      function initModals() {
-        cacheEls();
-        // Bootstrap modal instance for variant modal only
-        els.bsModal3 = bootstrap.Modal.getOrCreateInstance(els.modal3);
+    function showStep3() {
+      document.querySelector(".search-card-surface").style.display = "none";
+      const categoryPickerSurface = document.getElementById('category-picker-surface');
+      const productVerifySurface = document.getElementById('product-verify-surface');
+      const productSelectSurface = document.getElementById('product-select-surface');
+      const productRegisterSurface = document.getElementById('product-register-surface');
+      
+      if (categoryPickerSurface) categoryPickerSurface.classList.add('d-none');
+      if (productVerifySurface) productVerifySurface.classList.add('d-none');
+      if (productSelectSurface) productSelectSurface.classList.remove('d-none');
+      if (productRegisterSurface) productRegisterSurface.classList.add('d-none');
+    }
 
-        // Focus management for surfaces
-        if (els.categoryPickerSurface) {
-          const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-              if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                if (!els.categoryPickerSurface.classList.contains('d-none')) {
-                  setTimeout(function() { els.categorySearchInput && els.categorySearchInput.focus(); }, 100);
-                }
-              }
-            });
-          });
-          observer.observe(els.categoryPickerSurface, { attributes: true });
-        }
+    function showStep4() {
+      const categoryPickerSurface = document.getElementById('category-picker-surface');
+      const productVerifySurface = document.getElementById('product-verify-surface');
+      const productSelectSurface = document.getElementById('product-select-surface');
+      const productRegisterSurface = document.getElementById('product-register-surface');
+      
+      if (categoryPickerSurface) categoryPickerSurface.classList.add('d-none');
+      if (productVerifySurface) productVerifySurface.classList.add('d-none');
+      if (productSelectSurface) productSelectSurface.classList.add('d-none');
+      if (productRegisterSurface) productRegisterSurface.classList.remove('d-none');
+    }
 
-        // Focus for variant modal
-        els.modal3.addEventListener('shown.bs.modal', function() {
-          const first = els.variantForm && els.variantForm.querySelector('select, input');
-          first && first.focus();
-        });
-      }
+    function hideAllSteps() {
+      document.querySelector(".search-card-surface").style.display = "none";
+      const categoryPickerSurface = document.getElementById('category-picker-surface');
+      const productVerifySurface = document.getElementById('product-verify-surface');
+      const productSelectSurface = document.getElementById('product-select-surface');
+      const productRegisterSurface = document.getElementById('product-register-surface');
+      
+      if (categoryPickerSurface) categoryPickerSurface.classList.add('d-none');
+      if (productVerifySurface) productVerifySurface.classList.add('d-none');
+      if (productSelectSurface) productSelectSurface.classList.add('d-none');
+      if (productRegisterSurface) productRegisterSurface.classList.add('d-none');
+    }
 
-
-      // Static HTML: keep API but do nothing
-      function renderCategories(list) { /* no-op for static data */ }
-
-      function filterCategories(term) {
-        // Disabled for now
-        return 0;
-      }
-
-      function setSelectedCategory(id) {
-        state.selectedCategoryId = id;
-        const items = els.categoryGrid ? els.categoryGrid.querySelectorAll('.category-grid-item') : [];
-        items.forEach(function(card) {
-          const isSelected = String(card.getAttribute('data-category-id')) === String(id);
-          card.classList.toggle('selected', isSelected);
-        });
-        // jump to step 2 immediately
-        showStep2();
-      }
-
-      function showStep1() {
-        els.categoryPickerSurface && els.categoryPickerSurface.classList.remove('d-none');
-        els.productVerifySurface && els.productVerifySurface.classList.add('d-none');
-        els.productSelectSurface && els.productSelectSurface.classList.add('d-none');
-      }
-
-      function showStep2() {
-        els.categoryPickerSurface && els.categoryPickerSurface.classList.add('d-none');
-        els.productVerifySurface && els.productVerifySurface.classList.remove('d-none');
-        els.productSelectSurface && els.productSelectSurface.classList.add('d-none');
-        const cat = state.categories.find(function(c){ return String(c.id) === String(state.selectedCategoryId); });
-        const preview = Object.assign({}, state.productPreview, {
-          category: cat ? cat.path.concat([cat.title]).join(' / ') : '—'
-        });
-        renderProductPreview(preview);
-        renderBreadcrumbs();
-      }
-
-      function showStep3() {
-        els.categoryPickerSurface && els.categoryPickerSurface.classList.add('d-none');
-        els.productVerifySurface && els.productVerifySurface.classList.add('d-none');
-        els.productSelectSurface && els.productSelectSurface.classList.remove('d-none');
-        renderBreadcrumbs();
-      }
-
-      function hideAllSteps() {
-        els.categoryPickerSurface && els.categoryPickerSurface.classList.add('d-none');
-        els.productVerifySurface && els.productVerifySurface.classList.add('d-none');
-        els.productSelectSurface && els.productSelectSurface.classList.add('d-none');
-      }
-
-      // (Dynamic rendering removed; HTML contains sample data.)
-
-      function renderBreadcrumbs() {
-        const cat = state.categories.find(function(c){ return String(c.id) === String(state.selectedCategoryId); });
-        const subTitle = state.selectedSubcategoryId ? ' / زیر-دسته منتخب' : '';
-        if (els.breadcrumbStep2) els.breadcrumbStep2.textContent = (cat ? (cat.path.concat([cat.title]).join(' / ')) : '—');
-        if (els.breadcrumbStep3) els.breadcrumbStep3.textContent = (cat ? (cat.path.concat([cat.title]).join(' / ')) : '—') + subTitle;
-      }
-
-      function renderProductPreview(obj) {
-        if (!obj) return;
-        els.pvTitle.textContent = obj.title || '—';
-        els.pvCode.textContent = obj.code || '—';
-        els.pvBrand.textContent = obj.brand || '—';
-        els.pvCategory.textContent = obj.category || '—';
-        if (obj.image) {
-          els.pvImage.src = obj.image;
-          els.pvImage.alt = obj.title || '';
-        }
-      }
-
-      function validateVariantForm() {
-        if (!els.variantForm) return false;
-        els.variantForm.classList.add('was-validated');
-        return els.variantForm.checkValidity();
-      }
-
-      function addVariantToTable(obj) {
-        if (!els.variantTableBody) return;
-        // Remove empty row
-        const empty = els.variantTableBody.querySelector('tr.text-muted');
-        if (empty) empty.remove();
-
-        const tr = document.createElement('tr');
-        tr.innerHTML =
-          '<td>' + (obj.type || '—') + '</td>' +
-          '<td>' + (obj.price || '—') + '</td>' +
-          '<td>' + (obj.color || '—') + '</td>' +
-          '<td>' + (obj.warranty || '—') + '</td>' +
-          '<td>' + (obj.sellerSku || '—') + '</td>' +
-          '<td>' + (obj.stock || '۰') + '</td>' +
-          '<td class="text-end"><button type="button" class="btn btn-sm btn-outline-danger remove-variant"><i class="bi bi-x"></i></button></td>';
-        els.variantTableBody.appendChild(tr);
-
-        // Remove handler
-        tr.querySelector('.remove-variant').addEventListener('click', function() {
-          tr.remove();
-          state.variants = state.variants.filter(function(v) { return v !== obj; });
-          if (els.variantTableBody.children.length === 0) {
-            const r = document.createElement('tr');
-            r.className = 'text-muted';
-            r.innerHTML = '<td colspan="7" class="text-center">هنوز آیتمی اضافه نشده است</td>';
-            els.variantTableBody.appendChild(r);
-            els.submitVariantsBtn.disabled = true;
-          }
-        });
-      }
-
-      function resetAll() {
-        state.selectedCategoryId = null;
-        els.catNextBtn && (els.catNextBtn.disabled = true);
-        if (els.categorySearchInput) els.categorySearchInput.value = '';
-        renderCategories(state.categories);
-        if (els.variantForm) {
-          els.variantForm.reset();
-          els.variantForm.classList.remove('was-validated');
-        }
-        if (els.variantTableBody) {
-          els.variantTableBody.innerHTML = '<tr class="text-muted"><td colspan="7" class="text-center">هنوز آیتمی اضافه نشده است</td></tr>';
-        }
-        state.variants = [];
-        els.submitVariantsBtn && (els.submitVariantsBtn.disabled = true);
-      }
-
-      function bindEvents() {
-        // Rebind #notFoundBtn to avoid previous listeners
-        if (els.notFoundBtn) {
-          const clone = els.notFoundBtn.cloneNode(true);
-          els.notFoundBtn.parentNode.replaceChild(clone, els.notFoundBtn);
-          els.notFoundBtn = clone;
-          els.notFoundBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            resetAll();
-            renderCategories(state.categories);
-            showStep1();
-            // Hide main search card if present
-            const mainSearchCard = document.querySelector('.search-card-surface');
-            if (mainSearchCard) mainSearchCard.style.display = 'none';
-          });
-        }
-
-        // Category search disabled for now per request
-
-        // Close category surface
-        if (els.categoryCloseBtnSurface) {
-          els.categoryCloseBtnSurface.addEventListener('click', function() {
-            hideAllSteps();
-          });
-        }
-
-        // Close verify surface
-        if (els.verifyCloseBtnSurface) {
-          els.verifyCloseBtnSurface.addEventListener('click', function() {
-            hideAllSteps();
-          });
-        }
-
-        // Close product select surface
-        if (els.productSelectCloseBtn) {
-          els.productSelectCloseBtn.addEventListener('click', function(){ hideAllSteps(); });
-        }
-
-        // Back from product select to subcategory
-        if (els.productBackBtn) {
-          els.productBackBtn.addEventListener('click', function(){ showStep2(); });
-        }
-
-        // Continue from product to variant modal
-        if (els.productContinueBtn) {
-          els.productContinueBtn.addEventListener('click', function(){ hideAllSteps(); els.bsModal3.show(); });
-        }
-
-        // Static click bindings for HTML sample cards
-        if (els.categoryGrid) {
-          els.categoryGrid.querySelectorAll('.category-grid-item').forEach(function(card){
-            card.addEventListener('click', function(){ setSelectedCategory(this.getAttribute('data-category-id')); });
-          });
-        }
-        if (els.subcategoryGrid) {
-          els.subcategoryGrid.querySelectorAll('.category-grid-item').forEach(function(card){
-            card.addEventListener('click', function(){ state.selectedSubcategoryId = this.getAttribute('data-subcategory-id'); showStep3(); });
-          });
-        }
-        // Add variant to table
-        if (els.addVariantBtn) {
-          els.addVariantBtn.addEventListener('click', function() {
-            if (!validateVariantForm()) return;
-            const obj = {
-              type: document.getElementById('variantType').value,
-              price: document.getElementById('variantPrice').value,
-              color: document.getElementById('variantColor').value,
-              warranty: document.getElementById('variantWarranty').value,
-              sellerSku: document.getElementById('sellerSku').value,
-              stock: document.getElementById('stock').value
-            };
-            state.variants.push(obj);
-            addVariantToTable(obj);
-            els.submitVariantsBtn.disabled = state.variants.length === 0;
-          });
-        }
-
-        // Submit variants
-        if (els.submitVariantsBtn) {
-          els.submitVariantsBtn.addEventListener('click', function() {
-            const toast = bootstrap.Toast.getOrCreateInstance(els.successToast);
-            toast.show();
-            // Optional: scroll to main form placeholder
-            window.setTimeout(function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); }, 200);
-          });
-        }
-      }
-
-      // Public API
-      return {
-        initModals: initModals,
-        bindEvents: bindEvents,
-        filterCategories: filterCategories,
-        setSelectedCategory: setSelectedCategory,
-        renderProductPreview: renderProductPreview,
-        addVariantToTable: addVariantToTable,
-        validateVariantForm: validateVariantForm,
-        resetAll: resetAll,
-        showStep1: showStep1,
-        showStep2: showStep2,
-        hideAllSteps: hideAllSteps
-      };
-    })();
-
+    // Initialize on page load
     document.addEventListener('DOMContentLoaded', function() {
-      if (window.StaviaSearch) {
-        window.StaviaSearch.initModals();
-        window.StaviaSearch.bindEvents();
+      // Bind close buttons
+      const categoryCloseBtn = document.getElementById('categoryCloseBtnSurface');
+      const verifyCloseBtn = document.getElementById('verifyCloseBtnSurface');
+      const productSelectCloseBtn = document.getElementById('productSelectCloseBtn');
+      const productBackBtn = document.getElementById('productBackBtn');
+      const notFoundBtn = document.getElementById('notFoundBtn');
+      const productRegisterCloseBtn = document.getElementById('productRegisterCloseBtn');
+
+      if (categoryCloseBtn) {
+        categoryCloseBtn.addEventListener('click', hideAllSteps);
+      }
+      
+      if (verifyCloseBtn) {
+        verifyCloseBtn.addEventListener('click', hideAllSteps);
+      }
+      
+      if (productSelectCloseBtn) {
+        productSelectCloseBtn.addEventListener('click', hideAllSteps);
+      }
+      
+      if (productBackBtn) {
+        productBackBtn.addEventListener('click', showStep2);
+      }
+      
+      if (notFoundBtn) {
+        notFoundBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          showStep1();
+        });
+      }
+
+      if (productRegisterCloseBtn) {
+        productRegisterCloseBtn.addEventListener('click', hideAllSteps);
+      }
+
+      // Show success modal on final submit
+      const finalSubmitBtn = document.getElementById('finalSubmitBtn');
+      if (finalSubmitBtn) {
+        finalSubmitBtn.addEventListener('click', function(){
+          const m = new bootstrap.Modal(document.getElementById('successRegisterModal'));
+          m.show();
+        });
       }
     });
   </script>
