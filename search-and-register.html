@@ -10,7 +10,7 @@
   <link href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet" >
   <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" rel="stylesheet" >
 
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS is loaded later from CDN; local script removed to avoid SRI mismatch -->
   <!-- Custom Theme Files -->
   <link rel="stylesheet" href="theme-tokens.css">
   <link rel="stylesheet" href="bootstrap-theme.css">
@@ -1735,8 +1735,8 @@
             </div>
           </div>
         
-        <!-- Results List Section -->
-        <div class="" id="card1" style="margin: auto; width: 100%; padding: 20px; display: none;">
+      <!-- Results List Section -->
+      <div class="" id="card1" style="margin: auto; width: 100%; padding: 20px; display: none;">
           <div class="results-list-container" style="max-width: 1360px; margin: 0 auto;">
            
             
@@ -2010,7 +2010,296 @@
             </div>
           </div>
         </div>
+
+      <!-- Category Picker Surface (Step 1) -->
+      <div id="category-picker-surface" class="search-card-surface  d-none" style="width: 820px; padding: 40px; margin: 24px auto;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h5 class="mb-0">انتخاب دسته‌بندی</h5>
+          <button type="button" class="btn-close" id="categoryCloseBtnSurface" aria-label="بستن"></button>
+        </div>
+
+        <div class="mb-4">
+          <input type="text" class="form-control form-control-lg" id="categorySearchInput" placeholder="جستجوی دسته‌بندی..." autocomplete="off">
+        </div>
+
+        <div class="overflow-auto" style="max-height: 420px;">
+      <div id="categoryGrid" class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="col">
+          <div class="" data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center "   >
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-primary chevron-glow"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="" data-category-id="1">
+            <div class="d-flex justify-content-between align-items-center  ">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-primary fw-bolder chevron-glow"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-category-id="3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-category-id="4">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-category-id="5">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-category-id="6">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-category-id="7">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-category-id="8">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
       </div>
+        </div>
+      </div>
+
+      <!-- Subcategory Picker Surface (Step 2) -->
+      <div id="product-verify-surface" class="search-card-surface d-none" style="width: 820px; padding: 40px; margin: 24px auto;">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">انتخاب زیر-دسته</h5>
+          <button type="button" class="btn-close" id="verifyCloseBtnSurface" aria-label="بستن"></button>
+        </div>
+        <div class="text-muted small mb-3" id="breadcrumbStep2">—</div>
+        <div class="overflow-auto" style="max-height: 420px;">
+      <div id="subcategoryGrid" class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-1">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-2">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card category-grid-item p-3 h-100" data-subcategory-id="1-4">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h6 class="mb-0 fw-bold">دسته بندی نمونه</h6>
+              <i class="bi bi-chevron-left text-muted"></i>
+            </div>
+            <small class="text-muted">دسته بندی نمونه / دسته بندی نمونه</small>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <!-- Product Select Surface (Step 3) -->
+      <div id="product-select-surface" class="search-card-surface d-none" style="width: 820px; padding: 40px; margin: 24px auto;">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">انتخاب کالا</h5>
+          <button type="button" class="btn-close" id="productSelectCloseBtn" aria-label="بستن"></button>
+        </div>
+        <div class="text-muted small mb-3" id="breadcrumbStep3">—</div>
+        <div class="row g-3 mb-3">
+          <div class="col-12">
+            <label for="productSelect" class="form-label">محصول</label>
+            <select id="productSelect" class="form-select">
+              <option value="">یک محصول را انتخاب کنید...</option>
+            </select>
+          </div>
+        </div>
+        <div class="overflow-auto" style="max-height: 420px;">
+      <div class="list-group list-group-flush" id="productRadioList">
+        <label class="list-group-item d-flex align-items-center justify-content-between">
+          <span>دسته بندی نمونه</span>
+          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p1">
+        </label>
+        <label class="list-group-item d-flex align-items-center justify-content-between">
+          <span>دسته بندی نمونه</span>
+          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p2">
+        </label>
+        <label class="list-group-item d-flex align-items-center justify-content-between">
+          <span>دسته بندی نمونه</span>
+          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p3">
+        </label>
+        <label class="list-group-item d-flex align-items-center justify-content-between">
+          <span>دسته بندی نمونه</span>
+          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p4">
+        </label>
+        <label class="list-group-item d-flex align-items-center justify-content-between">
+          <span>دسته بندی نمونه</span>
+          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p5">
+        </label>
+        <label class="list-group-item d-flex align-items-center justify-content-between">
+          <span>دسته بندی نمونه</span>
+          <input class="form-check-input ms-2" type="radio" name="productRadio" value="p6">
+        </label>
+      </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <button type="button" class="btn btn-light" id="productBackBtn">بازگشت</button>
+          <button type="button" class="btn btn-primary" id="productContinueBtn" disabled>ادامه</button>
+        </div>
+      </div>
+
+      <!-- Modal 3: Register Variant -->
+      <div class="modal fade" id="modal-register-variant" tabindex="-1" aria-labelledby="modalRegisterVariantLabel" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalRegisterVariantLabel">ثبت تنوع کالا</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+            </div>
+            <div class="modal-body">
+              <form id="variantForm" novalidate>
+                <fieldset class="mb-3">
+                  <legend class="fs-6 mb-3">مشخصات تنوع</legend>
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                    <div class="col">
+                      <label for="variantType" class="form-label">نوع نمونه</label>
+                      <select class="form-select" id="variantType" required>
+                        <option value="" selected disabled>انتخاب کنید...</option>
+                        <option value="سایز">سایز</option>
+                        <option value="رنگ">رنگ</option>
+                        <option value="بسته‌بندی">بسته‌بندی</option>
+                      </select>
+                      <div class="invalid-feedback">نوع نمونه را انتخاب کنید.</div>
+                    </div>
+                    <div class="col">
+                      <label for="variantPrice" class="form-label">قیمت ترکیب تومان</label>
+                      <input type="text" inputmode="numeric" class="form-control" id="variantPrice" placeholder="مثال: ۱,۵۰۰,۰۰۰">
+                    </div>
+                    <div class="col">
+                      <label for="variantColor" class="form-label">رنگ</label>
+                      <select class="form-select" id="variantColor">
+                        <option value="" selected>بدون رنگ</option>
+                        <option>مشکی</option>
+                        <option>سفید</option>
+                        <option>قرمز</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label for="variantWarranty" class="form-label">گارانتی</label>
+                      <select class="form-select" id="variantWarranty">
+                        <option value="" selected>بدون گارانتی</option>
+                        <option>۱۲ ماهه</option>
+                        <option>۱۸ ماهه</option>
+                        <option>۲۴ ماهه</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label for="sellerSku" class="form-label">کد فروشنده</label>
+                      <input type="text" class="form-control" id="sellerSku" placeholder="مثال: SKU-1234">
+                    </div>
+                    <div class="col">
+                      <label for="stock" class="form-label">موجودی اولیه</label>
+                      <input type="text" inputmode="numeric" class="form-control" id="stock" placeholder="مثال: ۲۰">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+
+              <div class="mt-4">
+                <h6 class="mb-3">لیست تنوع‌ها</h6>
+                <div class="table-responsive">
+                  <table class="table table-sm align-middle">
+                    <thead>
+                    <tr>
+                      <th>نوع</th>
+                      <th>قیمت</th>
+                      <th>رنگ</th>
+                      <th>گارانتی</th>
+                      <th>کد فروشنده</th>
+                      <th>موجودی</th>
+                      <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="variantTableBody">
+                    <tr class="text-muted">
+                      <td colspan="7" class="text-center">هنوز آیتمی اضافه نشده است</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+              <div>
+                <button type="button" class="btn btn-outline-primary" id="addVariantBtn">افزودن به لیست</button>
+              </div>
+              <div>
+                <button type="button" class="btn btn-primary" id="submitVariantsBtn" disabled>ثبت محصول</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Container -->
+      <div class="position-fixed bottom-0 start-0 p-3" style="z-index: 1080">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="status" aria-live="polite" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">ثبت با موفقیت انجام شد.</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="بستن"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
     </div>
   </div>
 
@@ -2437,7 +2726,7 @@
     });
     
     // Handle view product list button click
-    viewProductListBtn.addEventListener('click', function() {
+    if (typeof viewProductListBtn !== 'undefined' && viewProductListBtn) viewProductListBtn.addEventListener('click', function() {
       // Hide search card
 
       searchCard.style.display = 'none';
@@ -2457,7 +2746,7 @@
     });
     
     // Handle "Not Found" button click
-    notFoundBtn.addEventListener('click', function() {
+    if (typeof notFoundBtn !== 'undefined' && notFoundBtn) notFoundBtn.addEventListener('click', function() {
       console.log('Product not found - opening add variant modal');
       
       // Create default product data for new product
@@ -2475,7 +2764,7 @@
     });
     
     // Handle search form submission
-    searchInput.addEventListener('keypress', function(event) {
+    if (typeof searchInput !== 'undefined' && searchInput) searchInput.addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
         const searchTerm = this.value.trim();
@@ -2500,13 +2789,13 @@
     });
     
     // Handle action buttons
-    document.querySelector('.search-card-link').addEventListener('click', function(event) {
+    if (document.querySelector('.search-card-link')) document.querySelector('.search-card-link').addEventListener('click', function(event) {
       event.preventDefault();
       console.log('Back button clicked');
       // Here you would typically navigate back
     });
     
-    document.querySelector('.search-card-action-btn').addEventListener('click', function() {
+    if (document.querySelector('.search-card-action-btn')) document.querySelector('.search-card-action-btn').addEventListener('click', function() {
       console.log('View product list clicked');
       // Here you would typically navigate to product list
     });
@@ -2525,7 +2814,7 @@
     });
     
     // Add product button functionality
-    document.querySelector('.add-product-btn').addEventListener('click', function() {
+    if (document.querySelector('.add-product-btn')) document.querySelector('.add-product-btn').addEventListener('click', function() {
       console.log('Add new product clicked');
       // Here you would typically navigate to add product page or show modal
     });
@@ -2635,7 +2924,7 @@
     }
     
     // Modal button handlers - Verify Modal Primary Button
-    document.querySelector('#btn-sell-this').addEventListener('click', function() {
+    if (document.querySelector('#btn-sell-this')) document.querySelector('#btn-sell-this').addEventListener('click', function() {
       console.log('Verify modal primary button clicked - opening became seller modal');
       
       // Extract product data from the verify modal
@@ -2652,11 +2941,11 @@
     });
     
     // Modal close handlers
-    document.querySelector('#modal-verify-same-product .btn-close').addEventListener('click', function() {
+    if (document.querySelector('#modal-verify-same-product .btn-close')) document.querySelector('#modal-verify-same-product .btn-close').addEventListener('click', function() {
       console.log('Modal closed via close button');
     });
     
-    document.querySelector('#modal-verify-same-product .btn-outline-secondary').addEventListener('click', function() {
+    if (document.querySelector('#modal-verify-same-product .btn-outline-secondary')) document.querySelector('#modal-verify-same-product .btn-outline-secondary').addEventListener('click', function() {
       console.log('Modal closed via back button');
     });
     
@@ -2681,7 +2970,7 @@
     }
     
     // Second modal button handlers - Became Seller Modal Primary Button
-    document.querySelector('.modal-register-variant-btn').addEventListener('click', function() {
+    if (document.querySelector('.modal-register-variant-btn')) document.querySelector('.modal-register-variant-btn').addEventListener('click', function() {
       console.log('Became seller modal primary button clicked - opening add variant modal');
       
       // Extract product data from the became seller modal
@@ -2696,16 +2985,16 @@
     });
     
     // Second modal close handlers
-    document.querySelector('#modal-became-seller .btn-close').addEventListener('click', function() {
+    if (document.querySelector('#modal-became-seller .btn-close')) document.querySelector('#modal-became-seller .btn-close').addEventListener('click', function() {
       console.log('Became seller modal closed via close button');
     });
     
-    document.querySelector('#modal-became-seller .btn-outline-secondary').addEventListener('click', function() {
+    if (document.querySelector('#modal-became-seller .btn-outline-secondary')) document.querySelector('#modal-became-seller .btn-outline-secondary').addEventListener('click', function() {
       console.log('Became seller modal closed via back button');
     });
     
     // Third modal button handlers
-    document.querySelector('.modal-add-to-list-btn').addEventListener('click', function() {
+    if (document.querySelector('.modal-add-to-list-btn')) document.querySelector('.modal-add-to-list-btn').addEventListener('click', function() {
       console.log('Add to variant list clicked');
       
       // Validate form
@@ -2734,7 +3023,7 @@
       }
     });
     
-    document.getElementById('addNewVariantBtn').addEventListener('click', function() {
+    if (document.getElementById('addNewVariantBtn')) document.getElementById('addNewVariantBtn').addEventListener('click', function() {
       console.log('Add new variant clicked');
       
       // Validate current form first
@@ -2764,12 +3053,12 @@
     });
     
     // Third modal close handlers
-    document.querySelector('#modal-add-variant .btn-close').addEventListener('click', function() {
+    if (document.querySelector('#modal-add-variant .btn-close')) document.querySelector('#modal-add-variant .btn-close').addEventListener('click', function() {
       console.log('Add variant modal closed via close button');
     });
     
     // Form validation and formatting
-    document.getElementById('salePrice').addEventListener('input', function(e) {
+    if (document.getElementById('salePrice')) document.getElementById('salePrice').addEventListener('input', function(e) {
       // Format price with commas
       let value = e.target.value.replace(/,/g, '');
       if (value && !isNaN(value)) {
@@ -2778,41 +3067,41 @@
     });
     
     // Form submission prevention
-    document.getElementById('variantForm').addEventListener('submit', function(e) {
+    if (document.getElementById('variantForm')) document.getElementById('variantForm').addEventListener('submit', function(e) {
       e.preventDefault();
       console.log('Form submission prevented - using button handlers instead');
     });
     
     // Modal events
-    document.getElementById('modal-verify-same-product').addEventListener('hidden.bs.modal', function() {
+    if (document.getElementById('modal-verify-same-product')) document.getElementById('modal-verify-same-product').addEventListener('hidden.bs.modal', function() {
       console.log('Modal hidden');
       // Reset modal content if needed
     });
     
-    document.getElementById('modal-verify-same-product').addEventListener('shown.bs.modal', function() {
+    if (document.getElementById('modal-verify-same-product')) document.getElementById('modal-verify-same-product').addEventListener('shown.bs.modal', function() {
       console.log('Modal shown');
       // Focus management or other setup
     });
     
     // Second modal events
-    document.getElementById('modal-became-seller').addEventListener('hidden.bs.modal', function() {
+    if (document.getElementById('modal-became-seller')) document.getElementById('modal-became-seller').addEventListener('hidden.bs.modal', function() {
       console.log('Became seller modal hidden');
       // Reset modal content if needed
     });
     
-    document.getElementById('modal-became-seller').addEventListener('shown.bs.modal', function() {
+    if (document.getElementById('modal-became-seller')) document.getElementById('modal-became-seller').addEventListener('shown.bs.modal', function() {
       console.log('Became seller modal shown');
       // Focus management or other setup
     });
     
     // Third modal events
-    document.getElementById('modal-add-variant').addEventListener('hidden.bs.modal', function() {
+    if (document.getElementById('modal-add-variant')) document.getElementById('modal-add-variant').addEventListener('hidden.bs.modal', function() {
       console.log('Add variant modal hidden');
       // Reset form if needed
       document.getElementById('variantForm').reset();
     });
     
-    document.getElementById('modal-add-variant').addEventListener('shown.bs.modal', function() {
+    if (document.getElementById('modal-add-variant')) document.getElementById('modal-add-variant').addEventListener('shown.bs.modal', function() {
       console.log('Add variant modal shown');
       // Focus on first input
       document.getElementById('brandSelect').focus();
@@ -2914,5 +3203,359 @@
     //   image: '/img/placeholder-product.png'
     // });
   </script>
+  <!-- Custom CSS for Category Grid Hover -->
+  <style>
+    .category-grid-item {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+    .category-grid-item:hover {
+      background-color: #E7F3FF !important;
+      border-color: var(--brand, #007bff) !important;
+      transform: translateY(-2px);
+    }
+    .category-grid-item.selected {
+      background-color: #E7F3FF !important;
+      border-color: var(--brand, #007bff) !important;
+    }
+
+    /* Glow only around the chevron icon */
+    .chevron-glow {
+      color: #0560FD !important;
+      box-shadow: 0 0 10px #0091D0;
+      outline: 2px #0560FD solid;
+      outline-offset: -1px;
+      border-radius: 999px; /* keep the glow circular around the glyph */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+    }
+  </style>
+
+  <!-- ========== StaviaSearch Namespace Script ========== -->
+  <script>
+    // StaviaSearch: hooks #notFoundBtn to show category surface, manages surface flow and variant modal
+    window.StaviaSearch = (function() {
+      const state = {
+        selectedCategoryId: null,
+        categories: [
+          { id: 1, title: 'موبایل', path: ['کالای دیجیتال', 'موبایل'] },
+          { id: 2, title: 'لپ‌تاپ', path: ['کالای دیجیتال', 'لپ‌تاپ'] },
+          { id: 3, title: 'هدفون بی‌سیم', path: ['کالای دیجیتال', 'صوتی و تصویری'] },
+          { id: 4, title: 'کتانی مردانه', path: ['مد و پوشاک', 'کفش'] },
+          { id: 5, title: 'مایع ظرفشویی', path: ['سوپرمارکت', 'بهداشت منزل'] },
+          { id: 6, title: 'ساعت هوشمند', path: ['کالای دیجیتال', 'گجت'] },
+          { id: 7, title: 'کرم مرطوب‌کننده', path: ['آرایشی و بهداشتی', 'مراقبت پوست'] },
+          { id: 8, title: 'چای سبز', path: ['سوپرمارکت', 'نوشیدنی'] }
+        ],
+        productPreview: {
+          title: 'کالای نمونه',
+          code: 'STA-00001',
+          brand: 'برند نمونه',
+          category: '—',
+          image: 'https://via.placeholder.com/48x88.png?text=48x88'
+        },
+        variants: []
+      };
+
+      // Helpers
+      const els = {};
+      function cacheEls() {
+        els.notFoundBtn = document.getElementById('notFoundBtn');
+        els.categoryPickerSurface = document.getElementById('category-picker-surface');
+        els.productVerifySurface = document.getElementById('product-verify-surface');
+        els.productSelectSurface = document.getElementById('product-select-surface');
+        els.modal3 = document.getElementById('modal-register-variant');
+        els.categorySearchInput = document.getElementById('categorySearchInput');
+        els.categoryGrid = document.getElementById('categoryGrid');
+        els.subcategoryGrid = document.getElementById('subcategoryGrid');
+        els.productSelect = document.getElementById('productSelect');
+        els.productRadioList = document.getElementById('productRadioList');
+        els.productContinueBtn = document.getElementById('productContinueBtn');
+        els.productBackBtn = document.getElementById('productBackBtn');
+        els.categoryCloseBtnSurface = document.getElementById('categoryCloseBtnSurface');
+        els.verifyCloseBtnSurface = document.getElementById('verifyCloseBtnSurface');
+        els.productSelectCloseBtn = document.getElementById('productSelectCloseBtn');
+        els.breadcrumbStep2 = document.getElementById('breadcrumbStep2');
+        els.breadcrumbStep3 = document.getElementById('breadcrumbStep3');
+        els.variantForm = document.getElementById('variantForm');
+        els.addVariantBtn = document.getElementById('addVariantBtn');
+        els.submitVariantsBtn = document.getElementById('submitVariantsBtn');
+        els.variantTableBody = document.getElementById('variantTableBody');
+        els.successToast = document.getElementById('successToast');
+        // preview fields
+        els.pvTitle = document.getElementById('pvTitle');
+        els.pvCode = document.getElementById('pvCode');
+        els.pvBrand = document.getElementById('pvBrand');
+        els.pvCategory = document.getElementById('pvCategory');
+        els.pvImage = document.getElementById('pvImage');
+      }
+
+      function initModals() {
+        cacheEls();
+        // Bootstrap modal instance for variant modal only
+        els.bsModal3 = bootstrap.Modal.getOrCreateInstance(els.modal3);
+
+        // Focus management for surfaces
+        if (els.categoryPickerSurface) {
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                if (!els.categoryPickerSurface.classList.contains('d-none')) {
+                  setTimeout(function() { els.categorySearchInput && els.categorySearchInput.focus(); }, 100);
+                }
+              }
+            });
+          });
+          observer.observe(els.categoryPickerSurface, { attributes: true });
+        }
+
+        // Focus for variant modal
+        els.modal3.addEventListener('shown.bs.modal', function() {
+          const first = els.variantForm && els.variantForm.querySelector('select, input');
+          first && first.focus();
+        });
+      }
+
+
+      // Static HTML: keep API but do nothing
+      function renderCategories(list) { /* no-op for static data */ }
+
+      function filterCategories(term) {
+        // Disabled for now
+        return 0;
+      }
+
+      function setSelectedCategory(id) {
+        state.selectedCategoryId = id;
+        const items = els.categoryGrid ? els.categoryGrid.querySelectorAll('.category-grid-item') : [];
+        items.forEach(function(card) {
+          const isSelected = String(card.getAttribute('data-category-id')) === String(id);
+          card.classList.toggle('selected', isSelected);
+        });
+        // jump to step 2 immediately
+        showStep2();
+      }
+
+      function showStep1() {
+        els.categoryPickerSurface && els.categoryPickerSurface.classList.remove('d-none');
+        els.productVerifySurface && els.productVerifySurface.classList.add('d-none');
+        els.productSelectSurface && els.productSelectSurface.classList.add('d-none');
+      }
+
+      function showStep2() {
+        els.categoryPickerSurface && els.categoryPickerSurface.classList.add('d-none');
+        els.productVerifySurface && els.productVerifySurface.classList.remove('d-none');
+        els.productSelectSurface && els.productSelectSurface.classList.add('d-none');
+        const cat = state.categories.find(function(c){ return String(c.id) === String(state.selectedCategoryId); });
+        const preview = Object.assign({}, state.productPreview, {
+          category: cat ? cat.path.concat([cat.title]).join(' / ') : '—'
+        });
+        renderProductPreview(preview);
+        renderBreadcrumbs();
+      }
+
+      function showStep3() {
+        els.categoryPickerSurface && els.categoryPickerSurface.classList.add('d-none');
+        els.productVerifySurface && els.productVerifySurface.classList.add('d-none');
+        els.productSelectSurface && els.productSelectSurface.classList.remove('d-none');
+        renderBreadcrumbs();
+      }
+
+      function hideAllSteps() {
+        els.categoryPickerSurface && els.categoryPickerSurface.classList.add('d-none');
+        els.productVerifySurface && els.productVerifySurface.classList.add('d-none');
+        els.productSelectSurface && els.productSelectSurface.classList.add('d-none');
+      }
+
+      // (Dynamic rendering removed; HTML contains sample data.)
+
+      function renderBreadcrumbs() {
+        const cat = state.categories.find(function(c){ return String(c.id) === String(state.selectedCategoryId); });
+        const subTitle = state.selectedSubcategoryId ? ' / زیر-دسته منتخب' : '';
+        if (els.breadcrumbStep2) els.breadcrumbStep2.textContent = (cat ? (cat.path.concat([cat.title]).join(' / ')) : '—');
+        if (els.breadcrumbStep3) els.breadcrumbStep3.textContent = (cat ? (cat.path.concat([cat.title]).join(' / ')) : '—') + subTitle;
+      }
+
+      function renderProductPreview(obj) {
+        if (!obj) return;
+        els.pvTitle.textContent = obj.title || '—';
+        els.pvCode.textContent = obj.code || '—';
+        els.pvBrand.textContent = obj.brand || '—';
+        els.pvCategory.textContent = obj.category || '—';
+        if (obj.image) {
+          els.pvImage.src = obj.image;
+          els.pvImage.alt = obj.title || '';
+        }
+      }
+
+      function validateVariantForm() {
+        if (!els.variantForm) return false;
+        els.variantForm.classList.add('was-validated');
+        return els.variantForm.checkValidity();
+      }
+
+      function addVariantToTable(obj) {
+        if (!els.variantTableBody) return;
+        // Remove empty row
+        const empty = els.variantTableBody.querySelector('tr.text-muted');
+        if (empty) empty.remove();
+
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td>' + (obj.type || '—') + '</td>' +
+          '<td>' + (obj.price || '—') + '</td>' +
+          '<td>' + (obj.color || '—') + '</td>' +
+          '<td>' + (obj.warranty || '—') + '</td>' +
+          '<td>' + (obj.sellerSku || '—') + '</td>' +
+          '<td>' + (obj.stock || '۰') + '</td>' +
+          '<td class="text-end"><button type="button" class="btn btn-sm btn-outline-danger remove-variant"><i class="bi bi-x"></i></button></td>';
+        els.variantTableBody.appendChild(tr);
+
+        // Remove handler
+        tr.querySelector('.remove-variant').addEventListener('click', function() {
+          tr.remove();
+          state.variants = state.variants.filter(function(v) { return v !== obj; });
+          if (els.variantTableBody.children.length === 0) {
+            const r = document.createElement('tr');
+            r.className = 'text-muted';
+            r.innerHTML = '<td colspan="7" class="text-center">هنوز آیتمی اضافه نشده است</td>';
+            els.variantTableBody.appendChild(r);
+            els.submitVariantsBtn.disabled = true;
+          }
+        });
+      }
+
+      function resetAll() {
+        state.selectedCategoryId = null;
+        els.catNextBtn && (els.catNextBtn.disabled = true);
+        if (els.categorySearchInput) els.categorySearchInput.value = '';
+        renderCategories(state.categories);
+        if (els.variantForm) {
+          els.variantForm.reset();
+          els.variantForm.classList.remove('was-validated');
+        }
+        if (els.variantTableBody) {
+          els.variantTableBody.innerHTML = '<tr class="text-muted"><td colspan="7" class="text-center">هنوز آیتمی اضافه نشده است</td></tr>';
+        }
+        state.variants = [];
+        els.submitVariantsBtn && (els.submitVariantsBtn.disabled = true);
+      }
+
+      function bindEvents() {
+        // Rebind #notFoundBtn to avoid previous listeners
+        if (els.notFoundBtn) {
+          const clone = els.notFoundBtn.cloneNode(true);
+          els.notFoundBtn.parentNode.replaceChild(clone, els.notFoundBtn);
+          els.notFoundBtn = clone;
+          els.notFoundBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            resetAll();
+            renderCategories(state.categories);
+            showStep1();
+            // Hide main search card if present
+            const mainSearchCard = document.querySelector('.search-card-surface');
+            if (mainSearchCard) mainSearchCard.style.display = 'none';
+          });
+        }
+
+        // Category search disabled for now per request
+
+        // Close category surface
+        if (els.categoryCloseBtnSurface) {
+          els.categoryCloseBtnSurface.addEventListener('click', function() {
+            hideAllSteps();
+          });
+        }
+
+        // Close verify surface
+        if (els.verifyCloseBtnSurface) {
+          els.verifyCloseBtnSurface.addEventListener('click', function() {
+            hideAllSteps();
+          });
+        }
+
+        // Close product select surface
+        if (els.productSelectCloseBtn) {
+          els.productSelectCloseBtn.addEventListener('click', function(){ hideAllSteps(); });
+        }
+
+        // Back from product select to subcategory
+        if (els.productBackBtn) {
+          els.productBackBtn.addEventListener('click', function(){ showStep2(); });
+        }
+
+        // Continue from product to variant modal
+        if (els.productContinueBtn) {
+          els.productContinueBtn.addEventListener('click', function(){ hideAllSteps(); els.bsModal3.show(); });
+        }
+
+        // Static click bindings for HTML sample cards
+        if (els.categoryGrid) {
+          els.categoryGrid.querySelectorAll('.category-grid-item').forEach(function(card){
+            card.addEventListener('click', function(){ setSelectedCategory(this.getAttribute('data-category-id')); });
+          });
+        }
+        if (els.subcategoryGrid) {
+          els.subcategoryGrid.querySelectorAll('.category-grid-item').forEach(function(card){
+            card.addEventListener('click', function(){ state.selectedSubcategoryId = this.getAttribute('data-subcategory-id'); showStep3(); });
+          });
+        }
+        // Add variant to table
+        if (els.addVariantBtn) {
+          els.addVariantBtn.addEventListener('click', function() {
+            if (!validateVariantForm()) return;
+            const obj = {
+              type: document.getElementById('variantType').value,
+              price: document.getElementById('variantPrice').value,
+              color: document.getElementById('variantColor').value,
+              warranty: document.getElementById('variantWarranty').value,
+              sellerSku: document.getElementById('sellerSku').value,
+              stock: document.getElementById('stock').value
+            };
+            state.variants.push(obj);
+            addVariantToTable(obj);
+            els.submitVariantsBtn.disabled = state.variants.length === 0;
+          });
+        }
+
+        // Submit variants
+        if (els.submitVariantsBtn) {
+          els.submitVariantsBtn.addEventListener('click', function() {
+            const toast = bootstrap.Toast.getOrCreateInstance(els.successToast);
+            toast.show();
+            // Optional: scroll to main form placeholder
+            window.setTimeout(function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); }, 200);
+          });
+        }
+      }
+
+      // Public API
+      return {
+        initModals: initModals,
+        bindEvents: bindEvents,
+        filterCategories: filterCategories,
+        setSelectedCategory: setSelectedCategory,
+        renderProductPreview: renderProductPreview,
+        addVariantToTable: addVariantToTable,
+        validateVariantForm: validateVariantForm,
+        resetAll: resetAll,
+        showStep1: showStep1,
+        showStep2: showStep2,
+        hideAllSteps: hideAllSteps
+      };
+    })();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.StaviaSearch) {
+        window.StaviaSearch.initModals();
+        window.StaviaSearch.bindEvents();
+      }
+    });
+  </script>
+
 </body>
 </html>
