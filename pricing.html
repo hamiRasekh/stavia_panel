@@ -199,9 +199,21 @@
                 </div>
               </div>
               <div class="d-flex justify-content-between">
-                <button class="btn btn-primary d-flex align-items-center gap-2" style="background: #0560FD; border: none; border-radius: 8px; box-shadow: 0 0 10px #0091D0;">
-                  <i class="bi bi-plus-lg"></i> ثبت کالای جدید
-                </button>
+                <div class="d-flex align-items-center gap-3">
+                  <button class="btn btn-primary d-flex align-items-center gap-2" style="background: #0560FD; border: 2px solid #0560FD; font-size: 12px; border-radius: 10px; box-shadow: 0 0 10px #0091D0; padding: 10px 16px;">
+                    بارگذاری فایل اکسل
+                    <i class="bi bi-file-earmark-arrow-up"></i>
+                  </button>
+                  <button class="btn d-flex align-items-center gap-2" style="background: #FFFFFF; color: #606060; border: 2px solid #0560FD; font-size: 12px; border-radius: 10px; box-shadow: 0 0 10px #0091D0; padding: 10px 16px;">
+                    دریافت فایل اکسل
+                    <i class="bi bi-file-earmark-spreadsheet-fill text-secondary"></i>
+                  </button>
+                  <button class="btn d-flex align-items-center gap-2" style="background: #FFFFFF; color: #606060; border: 2px solid #0560FD; font-size: 12px; border-radius: 10px; box-shadow: 0 0 10px #0091D0; padding: 10px 16px;">
+                    تاریخچه بارگذاری ها
+                    <i class="bi bi-clock-history text-secondary"></i>
+                  </button>
+                </div>
+                
                 <span class="text-primary fw-medium">تعداد نتایج : ۱۲۵۶</span>
               </div>
             </div>
@@ -209,11 +221,16 @@
             <!-- Table Header -->
             <div class="table-header" style="background: #ECF0FF;  border-radius: 8px; padding: 16px 24px; margin-bottom: 10px;">
               <div class="row g-0">
+                <div class="col-1 text-start fw-normal" style="font-size: 13px;">
+                  <div class="d-flex justify-content-start align-items-center">
+                    <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                    <span>ردیف</span>
+                  </div>
+                </div>
                 <div class="col-3 text-start fw-normal" style="font-size: 13px;">عنوان کالا</div>
                 <div class="col-2 text-center fw-normal" style="font-size: 13px;">گروه کالایی</div>
                 <div class="col-2 text-center fw-normal" style="font-size: 13px;">برند کالا</div>
-                <div class="col-1 text-center fw-normal" style="font-size: 13px;">وضعیت</div>
-                <div class="col-2 text-center fw-normal" style="font-size: 13px;">تعداد تنوع</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">وضعیت</div>
                 <div class="col-2 text-center fw-normal" style="font-size: 13px;">قابلیت</div>
               </div>
             </div>
@@ -223,6 +240,12 @@
               <!-- Row 1 -->
               <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
                 <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
                   <div class="col-3 text-end">
                     <div class="d-flex align-items-center gap-3">
                       <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
@@ -234,38 +257,739 @@
                   </div>
                   <div class="col-2 text-center">دسته بندی</div>
                   <div class="col-2 text-center">برند</div>
-                  <div class="col-1 text-center">
+                  <div class="col-2 text-center">
                     <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
                   </div>
-                  <div class="col-2 text-center">2</div>
                   <div class="col-2 text-center">
                     <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
                   </div>
                 </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin: 16px 0;"></div>
+                <!-- Inputs row (existing values) -->
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" value="کرِم" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control" value="100 میلی لیتر" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control" value="5" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" value="2" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control" value="20" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control" value="۲,۶۵۶,۰۰۰" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3 mt-4" style="font-size: 12px; border-radius: 10px;">ویرایش</button>
+                  </div>
+                </div>
+                <!-- Divider between sections -->
+                <div style="height: 2px; background: #707175; margin: 12px 0;"></div>
+                <!-- Inputs row (new add) -->
+                <div class="row g-2 align-items-center">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-light px-3 mt-4" style="font-size: 12px; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">افزودن</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin-top: 16px;"></div>
               </div>
 
               <!-- Row 2 -->
               <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
                 <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
                   <div class="col-3 text-end">
                     <div class="d-flex align-items-center gap-3">
                       <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
                       <div class="text-start">
-                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</div>
-                        <div class="product-code text-muted" style="font-size: 12px;">STA-4587</div>
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
                       </div>
                     </div>
                   </div>
                   <div class="col-2 text-center">دسته بندی</div>
                   <div class="col-2 text-center">برند</div>
-                  <div class="col-1 text-center">
+                  <div class="col-2 text-center">
                     <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
                   </div>
-                  <div class="col-2 text-center">2</div>
                   <div class="col-2 text-center">
                     <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
                   </div>
                 </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin: 16px 0;"></div>
+                <!-- Inputs row (existing values) -->
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" value="کرِم" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control" value="100 میلی لیتر" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control" value="5" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" value="2" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control" value="20" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control" value="۲,۶۵۶,۰۰۰" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3 mt-4" style="font-size: 12px; border-radius: 10px;">ویرایش</button>
+                  </div>
+                </div>
+                <!-- Divider between sections -->
+                <div style="height: 2px; background: #707175; margin: 12px 0;"></div>
+                <!-- Inputs row (new add) -->
+                <div class="row g-2 align-items-center">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-light px-3 mt-4" style="font-size: 12px; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">افزودن</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin-top: 16px;"></div>
+              </div>
+
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">برند</div>
+                  <div class="col-2 text-center">
+                    <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
+                  </div>
+                  <div class="col-2 text-center">
+                    <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin: 16px 0;"></div>
+                <!-- Inputs row (existing values) -->
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" value="کرِم" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control" value="100 میلی لیتر" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control" value="5" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" value="2" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control" value="20" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control" value="۲,۶۵۶,۰۰۰" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3 mt-4" style="font-size: 12px; border-radius: 10px;">ویرایش</button>
+                  </div>
+                </div>
+                <!-- Divider between sections -->
+                <div style="height: 2px; background: #707175; margin: 12px 0;"></div>
+                <!-- Inputs row (new add) -->
+                <div class="row g-2 align-items-center">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-light px-3 mt-4" style="font-size: 12px; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">افزودن</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin-top: 16px;"></div>
+              </div>
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">برند</div>
+                  <div class="col-2 text-center">
+                    <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
+                  </div>
+                  <div class="col-2 text-center">
+                    <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin: 16px 0;"></div>
+                <!-- Inputs row (existing values) -->
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" value="کرِم" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control" value="100 میلی لیتر" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control" value="5" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" value="2" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control" value="20" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control" value="۲,۶۵۶,۰۰۰" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3 mt-4" style="font-size: 12px; border-radius: 10px;">ویرایش</button>
+                  </div>
+                </div>
+                <!-- Divider between sections -->
+                <div style="height: 2px; background: #707175; margin: 12px 0;"></div>
+                <!-- Inputs row (new add) -->
+                <div class="row g-2 align-items-center">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-light px-3 mt-4" style="font-size: 12px; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">افزودن</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin-top: 16px;"></div>
+              </div>
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">برند</div>
+                  <div class="col-2 text-center">
+                    <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
+                  </div>
+                  <div class="col-2 text-center">
+                    <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin: 16px 0;"></div>
+                <!-- Inputs row (existing values) -->
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" value="کرِم" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control" value="100 میلی لیتر" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control" value="5" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" value="2" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control" value="20" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control" value="۲,۶۵۶,۰۰۰" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3 mt-4" style="font-size: 12px; border-radius: 10px;">ویرایش</button>
+                  </div>
+                </div>
+                <!-- Divider between sections -->
+                <div style="height: 2px; background: #707175; margin: 12px 0;"></div>
+                <!-- Inputs row (new add) -->
+                <div class="row g-2 align-items-center">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-light px-3 mt-4" style="font-size: 12px; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">افزودن</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin-top: 16px;"></div>
+              </div>
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">برند</div>
+                  <div class="col-2 text-center">
+                    <span class="badge" style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 4px;">تایید شده</span>
+                  </div>
+                  <div class="col-2 text-center">
+                    <button class="btn btn-primary px-3" style="font-size: 12px" onclick="showModal3()">افزودن تنوع</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin: 16px 0;"></div>
+                <!-- Inputs row (existing values) -->
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" value="کرِم" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control" value="100 میلی لیتر" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control" value="5" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" value="2" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control" value="20" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control" value="۲,۶۵۶,۰۰۰" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3 mt-4" style="font-size: 12px; border-radius: 10px;">ویرایش</button>
+                  </div>
+                </div>
+                <!-- Divider between sections -->
+                <div style="height: 2px; background: #707175; margin: 12px 0;"></div>
+                <!-- Inputs row (new add) -->
+                <div class="row g-2 align-items-center">
+                  <div class="col-10">
+                    <div class="row g-2">
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">رنگ:</label>
+                          <input type="text" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;;">سایز یا حجم:</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">بازه زمان ارسال (روز):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">حداکثر سفارش در سبد (عدد):</label>
+                          <input type="number" class="form-control" style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">موجودی نزد شما (عدد):</label>
+                          <input type="number" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                      <div class="col-2">
+                        <div class="d-flex flex-column">
+                          <label class="form-label mb-3" style="color: #606060; font-size: 12px; font-family: IRANYekan; font-weight: 700;">قیمت فروش (ریال):</label>
+                          <input type="text" class="form-control"  style="border-radius: 10px; border: 2px #606060 solid;" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <button class="btn btn-light px-3 mt-4" style="font-size: 12px; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid">افزودن</button>
+                  </div>
+                </div>
+                <!-- Divider -->
+                <div style="height: 2px; background: #707175; margin-top: 16px;"></div>
               </div>
             </div>
           </div>
