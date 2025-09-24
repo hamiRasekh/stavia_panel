@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>استاویتا | گزارش موجودی کالا</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" >
+  <link href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet" >
+  <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" rel="stylesheet" >
+
+  <!-- Custom Theme Files -->
+  <link rel="stylesheet" href="theme-tokens.css">
+  <link rel="stylesheet" href="bootstrap-theme.css">
+  <link rel="stylesheet" href="main.css">
+  
+  <!-- Persian Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+<body>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- Layout Container -->
+  <div class="layout-container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <!-- Sidebar Topbar -->
+      <div class="sidebar-topbar">
+        <div class="d-flex align-items-center gap-2" >
+          <div class="topbar-avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="topbar-user-name">
+            <h6 class="topbar-user-name">نام فروشنده</h6>
+          </div>
+        </div>
+        
+        
+        <div class="topbar-spacer"></div>
+        
+        <div class="topbar-right">
+          <button class="topbar-icon" title="آپلود">
+            <i class="bi bi-upload"></i>
+          </button>
+          <button class="topbar-icon" title="اعلان‌ها">
+            <i class="bi bi-bell"></i>
+            <span class="topbar-badge">24</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Sidebar Menu -->
+      <div class="sidebar-menu">
+        <!-- پیشخوان Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">پیشخوان</div>
+          <a href="#" class="menu-item">
+            <i class="bi bi-grid-3x3-gap"></i>
+            <span class="menu-item-label">پیشخوان</span>
+          </a>
+        </div>
+        
+        <!-- کالا Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">کالا</div>
+          <a href="search-and-register.html" class="menu-item">
+            <i class="bi bi-search"></i>
+            <span class="menu-item-label">جستجو و ثبت کالا</span>
+          </a>
+          <a href="add_product.html" class="menu-item">
+            <i class="bi bi-box-seam"></i>
+            <span class="menu-item-label">مدیریت کالا و افزودن تنوع</span>
+          </a>
+          <a href="pricing.html" class="menu-item">
+            <i class="bi bi-plus-square"></i>
+            <span class="menu-item-label">مدیریت تنوع و قیمت گذاری</span>
+          </a>
+          <a href="#" class="menu-item active">
+            <i class="bi bi-clipboard-data"></i>
+            <span class="menu-item-label">گزارش موجودی کالا</span>
+          </a>
+        </div>
+        
+        <!-- سفارش‌ها Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">سفارش‌ها</div>
+          <a href="#" class="menu-item">
+            <i class="bi bi-truck"></i>
+            <span class="menu-item-label">مدیریت سفارشات جاری</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-clock-history"></i>
+            <span class="menu-item-label">تاریخچه سفارشات</span>
+          </a>
+        </div>
+        
+        <!-- مالی Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">مالی</div>
+          <a href="#" class="menu-item">
+            <i class="bi bi-receipt"></i>
+            <span class="menu-item-label">صورتحساب ها</span>
+          </a>
+        </div>
+        
+        <!-- تحلیل عملکرد Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">تحلیل عملکرد</div>
+          <a href="#" class="menu-item">
+            <i class="bi bi-bar-chart-line"></i>
+            <span class="menu-item-label">فروش و درآمد</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-arrow-counterclockwise"></i>
+            <span class="menu-item-label">مرجوعی</span>
+          </a>
+        </div>
+        
+        <!-- راهنما Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">راهنما</div>
+          <a href="#" class="menu-item">
+            <i class="bi bi-mortarboard"></i>
+            <span class="menu-item-label">مرکز آموزش فروشندگان</span>
+          </a>
+          <a href="#" class="menu-item">
+            <i class="bi bi-shield-exclamation"></i>
+            <span class="menu-item-label">کالاهای غیرمجاز</span>
+          </a>
+        </div>
+        
+        <!-- پشتیبانی Section -->
+        <div class="menu-section">
+          <div class="menu-section-title">پشتیبانی</div>
+          <a href="#" class="menu-item">
+            <i class="bi bi-headset"></i>
+            <span class="menu-item-label">درخواست پشتیبانی</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="main-content d-flex justify-content-center text-center align-items-center" style="min-height: 100vh; background: var(--bg-base);" id="mainContent">
+      
+      <!-- Results List Section -->
+      <div id="card1" style=" width: 100%; padding: 20px;">
+        <div class="results-list-container" style="max-width: 1360px; margin: 0 auto;">
+          <!-- Results Table Container with Scrolling -->
+          <div class="table-container" style="background: #F6F7FB; border-radius: 20px; padding: 24px;  overflow-x: auto;">
+            <!-- Toolbar -->
+            <div class="results-toolbar mb-4">
+              <div style="width: 100%; margin: auto; margin-bottom: 20px;">
+                <div class="search-container position-relative">
+                  <input type="text" class="form-control" placeholder="نمونه" style="width: 100%; background: #ECF0FF; border: 2px solid #ECF0FF; border-radius: 10px; padding-right: 40px;">
+                  <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mb-3 align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="d-flex  align-items-center gap-2">
+                    <i class="bi bi-sliders2 fw-bold text-primary" style="font-weight: 800;"></i>
+                    <span style="color: #606060; font-size: 15px; margin-left: 60px; font-weight: 500; word-wrap: break-word">فیلتر ها</span>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر اول</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر دوم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر سوم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                    <select style="border-radius: 17.50px; padding: 6px 12px; border: 2px #0560FD solid">
+                      <option value="1">فیلتر چهارم</option>
+                      <option value="2">فیلتر دوم</option>
+                      <option value="3">فیلتر سوم</option>
+                      <option value="4">فیلتر چهارم</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <button class="btn btn-primary d-flex align-items-center gap-2" style="background: #0560FD; border: 2px solid #0560FD; font-size: 12px; border-radius: 10px; box-shadow: 0 0 10px #0091D0; padding: 10px 16px;">
+                    بارگذاری فایل اکسل
+                    <i class="bi bi-file-earmark-arrow-up"></i>
+                  </button>
+                  <button class="btn d-flex align-items-center gap-2" style="background: #FFFFFF; color: #606060; border: 2px solid #0560FD; font-size: 12px; border-radius: 10px; box-shadow: 0 0 10px #0091D0; padding: 10px 16px;">
+                    دریافت فایل اکسل
+                    <i class="bi bi-file-earmark-spreadsheet-fill text-secondary"></i>
+                  </button>
+                  <button class="btn d-flex align-items-center gap-2" style="background: #FFFFFF; color: #606060; border: 2px solid #0560FD; font-size: 12px; border-radius: 10px; box-shadow: 0 0 10px #0091D0; padding: 10px 16px;">
+                    تاریخچه بارگذاری ها
+                    <i class="bi bi-clock-history text-secondary"></i>
+                  </button>
+                </div>
+                
+                <span class="text-primary fw-medium">تعداد نتایج : ۱۲۵۶</span>
+              </div>
+            </div>
+
+            <!-- Table Header -->
+            <div class="table-header" style="background: #ECF0FF;  border-radius: 8px; padding: 16px 24px; margin-bottom: 10px;">
+              <div class="row g-0">
+                <div class="col-1 text-start fw-normal" style="font-size: 13px;">
+                  <div class="d-flex justify-content-start align-items-center">
+                    <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                    <span>ردیف</span>
+                  </div>
+                </div>
+                <div class="col-3 text-start fw-normal" style="font-size: 13px;">عنوان کالا</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">گروه کالایی</div>
+                <div class="col-2 text-center fw-normal" style="font-size: 13px;">موجودی نزد شما</div>
+                <div class="col-1 text-center fw-normal" style="font-size: 13px;">رزرو</div>
+                <div class="col-3 text-center fw-normal" style="font-size: 13px;">مانده قابل فروش</div>
+              </div>
+            </div>
+
+            <!-- Table Rows -->
+            <div class="table-rows">
+              <!-- Row (sample repeated) -->
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4586</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">20</div>
+                  <div class="col-1 text-center">1</div>
+                  <div class="col-3 text-center">20</div>
+                </div>
+              </div>
+
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>2</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4587</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">20</div>
+                  <div class="col-1 text-center">2</div>
+                  <div class="col-3 text-center">20</div>
+                </div>
+              </div>
+
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>3</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4588</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">20</div>
+                  <div class="col-1 text-center">1</div>
+                  <div class="col-3 text-center">20</div>
+                </div>
+              </div>
+
+              <div class="table-row mb-3" style="background: #ECF0FF; box-shadow: 0px 0px 10px #0091D0; border-radius: 10px; border: 2px #0560FD solid; padding: 16px 24px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-1 text-start">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <input class="form-check-input h-12px w-12px me-2" style="border: 2px solid #606060; border-radius: 3px; background-color: #ECF0FF; " type="checkbox">
+                      <span>4</span>
+                    </div>
+                  </div>
+                  <div class="col-3 text-end">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="img/9af2fabbbddbfac8170bd375a3176d323a5a6460.png" alt="Product" class="product-image" style="width: 36px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid #E5E7EB;">
+                      <div class="text-start">
+                        <div class="product-title text-dark mb-1" style="font-size: 14px; line-height: 1.4;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</div>
+                        <div class="product-code text-muted" style="font-size: 12px;">STA-4589</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 text-center">دسته بندی</div>
+                  <div class="col-2 text-center">20</div>
+                  <div class="col-1 text-center">3</div>
+                  <div class="col-3 text-center">20</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>
+
+

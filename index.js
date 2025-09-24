@@ -692,6 +692,19 @@
         console.log('- Verify modal primary → Became seller modal');
         console.log('- Became seller modal primary → Add variant modal');
         console.log('- Not found button → Add variant modal');
+
+        // Orders page: open order details modal
+        const orderDetailsButtons = document.querySelectorAll('.js-order-details');
+        if (orderDetailsButtons && orderDetailsButtons.length) {
+            orderDetailsButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const el = document.getElementById('modal-order-details');
+                    if (!el) return;
+                    const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el);
+                    modal.show();
+                });
+            });
+        }
     });
 
 
@@ -730,3 +743,68 @@
         const modal = bootstrap.Modal.getInstance(el);
         if (modal) modal.hide();
     }
+
+        // Orders: open details modal (callable inline)
+        function showOrderDetails() {
+        const el = document.getElementById('modal-order-details');
+        if (!el) return;
+        const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el);
+        modal.show();
+    }
+
+        // expose for inline handler
+        window.showOrderDetails = showOrderDetails;
+
+        // History modal opener (inline-friendly)
+        function showHistoryDetails() {
+        const el = document.getElementById('modal-history-details');
+        if (!el) return;
+        const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el);
+        modal.show();
+    }
+        window.showHistoryDetails = showHistoryDetails;
+
+        // Invoices modal inline trigger
+        function showInvoiceDetails() {
+        const el = document.getElementById('modal-invoice-details');
+        if (!el) return;
+        const modal = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el);
+        modal.show();
+    }
+        window.showInvoiceDetails = showInvoiceDetails;
+
+        // Invoices: swap surfaces (list <-> details)
+        function showInvoiceSurface() {
+        const list = document.getElementById('invoice-list-surface');
+        const detail = document.getElementById('invoice-detail-surface');
+        if (!list || !detail) { showInvoiceDetails(); return; }
+        list.classList.add('d-none');
+        detail.classList.remove('d-none');
+    }
+        function hideInvoiceSurface() {
+        const list = document.getElementById('invoice-list-surface');
+        const detail = document.getElementById('invoice-detail-surface');
+        if (!list || !detail) return;
+        detail.classList.add('d-none');
+        list.classList.remove('d-none');
+    }
+        window.showInvoiceSurface = showInvoiceSurface;
+        window.hideInvoiceSurface = hideInvoiceSurface;
+
+        // Support requests: swap surfaces (list <-> detail)
+        function showTicketDetail() {
+        const list = document.getElementById('ticket-list-surface');
+        const detail = document.getElementById('ticket-detail-surface');
+        if (!list || !detail) return;
+        list.classList.add('d-none');
+        detail.classList.remove('d-none');
+    }
+        function hideTicketDetail() {
+        const list = document.getElementById('ticket-list-surface');
+        const detail = document.getElementById('ticket-detail-surface');
+        if (!list || !detail) return;
+        detail.classList.add('d-none');
+        list.classList.remove('d-none');
+    }
+        window.showTicketDetail = showTicketDetail;
+        window.hideTicketDetail = hideTicketDetail;
