@@ -129,23 +129,37 @@
     }
     });
 
-        // Menu item click handlers
+        // Menu item click handlers with real navigation support
         document.querySelectorAll('.menu-item').forEach(item => {
         item.addEventListener('click', function(e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
 
-            // Remove active class from all items
+            // If link is a hash or empty, keep SPA-like behavior
+            const isPlaceholder = !href || href === '#' || href.startsWith('javascript:');
+            if (isPlaceholder) {
+                e.preventDefault();
+
+                document.querySelectorAll('.menu-item').forEach(menuItem => {
+                    menuItem.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebar').classList.remove('mobile-open');
+                }
+                return;
+            }
+
+            // For real links, allow navigation but cleanup UI first
             document.querySelectorAll('.menu-item').forEach(menuItem => {
                 menuItem.classList.remove('active');
             });
-
-            // Add active class to clicked item
             this.classList.add('active');
 
-            // Close mobile menu if open
             if (window.innerWidth <= 768) {
                 document.getElementById('sidebar').classList.remove('mobile-open');
             }
+            // Let the browser navigate normally (no preventDefault)
         });
     });
 

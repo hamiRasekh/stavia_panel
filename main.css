@@ -183,6 +183,16 @@
     filter: brightness(0) invert(1);
 }
 
+.menu-item img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.menu-item.active img {
+    filter: brightness(0) invert(1);
+}
+
 .menu-item i {
     width: 20px;
     height: 20px;
